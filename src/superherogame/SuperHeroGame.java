@@ -12,20 +12,32 @@ import byui.cit260.herogame.model.Tiles;
  * @author Cindy Glunt & Steph Ogden
  */
 public class SuperHeroGame {
+    private static Object tileOne;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        Tiles tile = new Tiles();
+        @SuppressWarnings("LocalVariableHidesMemberVariable")
+        Tiles tileOne;
+        tileOne = new Tiles();
         
-        tileOne.setItem("Bow - Raise Strength 5");
+        tileOne.setItem("Bow");
         
-        String tileInfo = tileOne.toString();
+        String tileInfo;
+        tileInfo = tileOne.toString();
         System.out.println(tileInfo);
             
         }
+
+    public static Object getTileOne() {
+        return tileOne;
+    }
+
+    public static void setTileOne(Object tileOne) {
+        SuperHeroGame.tileOne = tileOne;
+    }
     }
     
-}
+
