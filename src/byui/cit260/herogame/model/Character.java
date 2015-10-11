@@ -76,4 +76,8 @@ public class Character {
     public String toString() {
         return "Character{" + "Strength=" + Strength + ", Team=" + Team + ", Speed=" + Speed + '}';
     }
+
+    Object getSpeed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Cynthia Glunt
+ * @author Cindy Glunt
  */
 public class Tiles implements Serializable{
     
@@ -86,10 +86,7 @@ public class Tiles implements Serializable{
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        if (!Objects.equals(this.team, other.team)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.team, other.team);
     }
 
     @Override
