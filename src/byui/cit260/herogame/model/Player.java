@@ -22,4 +22,8 @@ public class Player{
         player = input.next();
     }
 
+    public void setItem(String what_is_your_name) {
+        
+    }
+
 }
