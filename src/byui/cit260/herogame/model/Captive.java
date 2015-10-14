@@ -5,50 +5,33 @@
  */
 package byui.cit260.herogame.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Cindy Glunt 
  */
-public class Captive implements Serializable{
+public class Captive extends CharacterModel{
     
-    //class instance variables
-    private String name;
-    private String power;
+    // class instance variables
+       private String Message;
 
-    public Captive() {
+    public Captive(String Message) {
+        this.Message = Message;
+    }
+       
+    public String getMessage() {
+        return Message;
     }
 
-    
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPower() {
-        return power;
-    }
-
-    public void setPower(String power) {
-        this.power = power;
-    }
-
-    @Override
-    public String toString() {
-        return "Captive{" + "name=" + name + ", power=" + power + '}';
+    public void setMessage(String Message) {
+        this.Message = Message;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 13 * hash + Objects.hashCode(this.name);
-        hash = 13 * hash + Objects.hashCode(this.power);
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.Message);
         return hash;
     }
 
@@ -61,16 +44,20 @@ public class Captive implements Serializable{
             return false;
         }
         final Captive other = (Captive) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.power, other.power)) {
+        if (!Objects.equals(this.Message, other.Message)) {
             return false;
         }
         return true;
     }
-  
-    
+
+    @Override
+    public String toString() {
+        return "Captive{" + "Message=" + Message + '}';
+    }
+ 
+       
     
     
 }
+
+   

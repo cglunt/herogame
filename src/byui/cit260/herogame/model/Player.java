@@ -5,13 +5,24 @@
  */
 package byui.cit260.herogame.model;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
  * @author Steph Ogden
  */
+
+
+
 public class Player{
+    //Player has a collection of Heros
+    private String name;
+    private ArrayList<Hero> team;
+    //Player has a collection of Item
+    private ArrayList<Item> item;
+    
+    
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);

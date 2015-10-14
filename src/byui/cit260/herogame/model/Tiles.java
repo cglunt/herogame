@@ -7,7 +7,6 @@ package byui.cit260.herogame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
  *
  * @author Cindy Glunt
@@ -17,21 +16,25 @@ public class Tiles implements Serializable{
     
     
   // class instance variables
-        private String item;
+        private Item item;
         private String character;
-        private String player;
-        private String team;
+        private Player player;
+        
+    public Tiles(Item item, String character, Player player) {
+        this.item = item;
+        this.character = character;
+        this.player = player;
+    }
 
     public Tiles() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-        
-        
-        
-    public String getItem() {
+
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(String item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 
@@ -43,28 +46,20 @@ public class Tiles implements Serializable{
         this.character = character;
     }
 
-    public String getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(String player) {
+    public void setPlayer(Player player) {
         this.player = player;
-    }
-
-    public String getTeam() {
-        return team;
-    }
-
-    public void setTeam(String team) {
-        this.team = team;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.item);
-        hash = 67 * hash + Objects.hashCode(this.character);
-        hash = 67 * hash + Objects.hashCode(this.team);
+        int hash = 7;
+        hash = 13 * hash + Objects.hashCode(this.item);
+        hash = 13 * hash + Objects.hashCode(this.character);
+        hash = 13 * hash + Objects.hashCode(this.player);
         return hash;
     }
 
@@ -86,17 +81,17 @@ public class Tiles implements Serializable{
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        return Objects.equals(this.team, other.team);
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Tiles{" + "item=" + item + ", character=" + character + ", player=" + player + ", team=" + team + '}';
+        return "Tiles{" + "item=" + item + ", character=" + character + ", player=" + player + '}';
     }
-       
 
-  
+
+
         
-  
     
+        
 }
