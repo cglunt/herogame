@@ -5,24 +5,22 @@
  */
 package byui.cit260.herogame.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 /**
  *
  * @author Cindy Glunt
  */
-public class Tiles implements Serializable{
-    
-    
+public class Tiles extends Map{
+     
     
   // class instance variables
         private Item item;
-        private String character;
+        private String characterModel;
         private Player player;
         
     public Tiles(Item item, String character, Player player) {
         this.item = item;
-        this.character = character;
+        this.characterModel = character;
         this.player = player;
     }
 
@@ -39,11 +37,11 @@ public class Tiles implements Serializable{
     }
 
     public String getCharacter() {
-        return character;
+        return characterModel;
     }
 
     public void setCharacter(String character) {
-        this.character = character;
+        this.characterModel = character;
     }
 
     public Player getPlayer() {
@@ -58,7 +56,7 @@ public class Tiles implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 13 * hash + Objects.hashCode(this.item);
-        hash = 13 * hash + Objects.hashCode(this.character);
+        hash = 13 * hash + Objects.hashCode(this.characterModel);
         hash = 13 * hash + Objects.hashCode(this.player);
         return hash;
     }
@@ -75,7 +73,7 @@ public class Tiles implements Serializable{
         if (!Objects.equals(this.item, other.item)) {
             return false;
         }
-        if (!Objects.equals(this.character, other.character)) {
+        if (!Objects.equals(this.characterModel, other.characterModel)) {
             return false;
         }
         if (!Objects.equals(this.player, other.player)) {
@@ -86,7 +84,7 @@ public class Tiles implements Serializable{
 
     @Override
     public String toString() {
-        return "Tiles{" + "item=" + item + ", character=" + character + ", player=" + player + '}';
+        return "Tiles{" + "item=" + item + ", characterModel=" + characterModel + ", player=" + player + '}';
     }
 
 
