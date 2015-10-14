@@ -15,8 +15,8 @@ import java.util.Scanner;
 
 
 
-public class Player{
-    //Player has a collection of Heros
+public class Player extends CharacterModel{
+    //Player has a collection of Heroes
     private String name;
     private ArrayList<Hero> team;
     //Player has a collection of Item
