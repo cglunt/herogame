@@ -5,6 +5,7 @@
  */
 package superherogame;
 
+import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Tiles;
 
@@ -24,6 +25,9 @@ public class SuperHeroGame {
         @SuppressWarnings("LocalVariableHidesMemberVariable")
         Tiles tileOne;
         tileOne = new Tiles();
+        
+        Item Bow;
+        Bow = new Item();
         
         tileOne.setItem("Bow");
         

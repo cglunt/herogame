@@ -5,12 +5,13 @@
  */
 package byui.cit260.herogame.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 /**
  *
  * @author Cindy Glunt
  */
-public class Tiles extends Map{
+public class Tiles implements Serializable{
      
     
   // class instance variables
