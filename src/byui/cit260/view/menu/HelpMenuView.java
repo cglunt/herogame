@@ -5,101 +5,104 @@
  */
 package byui.cit260.view.menu;
 
-import static java.lang.System.in;
 import java.util.Scanner;
-import superherogame.help;
 
 /**
  *
- * @author Steph Ogden
+ * @author Cindy Glunt & Steph Ogden
  */
-@SuppressWarnings("InitializerMayBeStatic")
+
 public class HelpMenuView {
-    public HelpMenuView (){
-        
-    }
-
-    /**
-     *
-     */
-    public void helpMenu() {
-   
-    
-        
+                public HelpMenuView() {
 }
-public      char get.Input() {  
-    Scanner in = new Scanner(System.in);
-    String input = "";
-    
-    char rtn = 0;
-    while(void() < 1) {
-      displayMenu();  
-    input = in.nextLine();
-    
-    
-    if(input.length() < 1) {
-    System.out.println("Please select an option: ");
-     displayMenu();
-     
-   
+public void displayHelp() {
+    System.out.println("Please select an option:");
+    System.out.println("G  - What is the goal of the game?");
+    System.out.println("M - How to Move");
+    System.out.println("H - Hero & Item Point Values");
+    System.out.println("V - Villian Point Values");
+    System.out.println("B - How to Battle");
+    System.out.println("E - Exit Help Menu");
+}
+public          char getInput() {
+Scanner in = new Scanner(System.in);
+String input = "";
+                                char rtn = 0 ;
+                while(input.length() < 1) {
+                displayHelp();
+                input = in.nextLine();
+                if(input.length() < 1) {
+                                System.out.println("Please select an option");
+                                displayHelp();
 } else {
-    rtn = input.toUpperCase().charAt(0);
-    if (rtn != 'S' && rtn != 'O' && rtn != 'M' && rtn != 'E') {
-        System.out.println("Please select a valid input.");
-        input = "";
-    } 
-    }
-    }
-               
-    return rtn;{
-
+rtn =input.toUpperCase().charAt(0);
+if(rtn != 'G' &&  rtn != 'M' && rtn != 'H' && rtn != 'V' && rtn != 'B' && rtn != 'E') {
+                System.out.println("Please select a valid input.");
+                input = "";
 }
-    /**
-     *
-     * @param input
-     */
-    public void doAction (char input) {
-    switch(input) {
-       case 'S': 
-           startNewGame();
-           break;
-       case 'O' :
-           openGame();
-           break;
-       case 'M' :
-           showMainMenu();
-           break;
-       case 'E' :
-          exitGame();
-           break;
-       default:
-           System.out.println("ERROR ON INPUT");
-    }
+}
+                }
+    return rtn;
 }
 
-    private void startNewGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ 
+public void doAction(char input) {
+                    
+             
+switch(input) {
+    
+
+case 'G' :
+showGoalHelp();
+break;
+case 'M' :
+showMoveHelp();
+break;
+case 'H':
+showHeroPoints();
+break;
+case 'V':
+showVillianPoints();
+break;
+case 'B':
+showBattleHelp();
+break;
+case 'E':
+exitGameHelp();
+break;
+
+default:
+System.out.println("INPUT ERROR");
+}
+}
+
+    private void showGoalHelp() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void openGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void showMoveHelp() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void showMainMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void showHeroPoints() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void exitGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void showVillianPoints() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void showBattleHelp() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static class rtn {
+    private void exitGameHelp() {
+        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+    }
 
-        public rtn() {
+    private static class Public {
+
+        public Public() {
         }
     }
 }
