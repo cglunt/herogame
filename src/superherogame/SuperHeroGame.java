@@ -5,22 +5,36 @@
  */
 package superherogame;
 
-import byui.cit260.herogame.model.Item;
+import byui.cit260.view.menu.WelcomeView;
+
+/*** import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Tiles;
+*/
+
+
+
 
 /**
- *
- * @author Cindy Glunt & Steph Ogden
- */
-public class SuperHeroGame {
     private static Object tileOne;
     private static Object playerOne;
+*/
 
+    public class SuperHeroGame {
+        
     /**
-     * @param args the command line arguments
+     *
+     * @param args
      */
     public static void main(String[] args) {
+
+    WelcomeView welcomeView = new WelcomeView();
+   welcomeView.displayBanner();
+
+}
+    }
+/*
+   
         
         @SuppressWarnings("LocalVariableHidesMemberVariable")
         Tiles tileOne;
@@ -66,3 +80,13 @@ public class SuperHeroGame {
     }
     
 
+
+
+    Player mainCharacter = new Player();
+    WelcomeView welcomeView = new WelcomeView();
+WelcomeView.displayBanner();
+ 
+Player.setName(welcomeView.getPlayerName());
+WelcomeView.displayPlayerNameBanner(player);
+* */
+ 
