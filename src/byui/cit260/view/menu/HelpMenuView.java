@@ -11,70 +11,69 @@ import java.util.Scanner;
  *
  * @author Cindy Glunt & Steph Ogden
  */
-
 public class HelpMenuView {
-                public HelpMenuView() {
-}
-public void displayHelp() {
-    System.out.println("Please select an option:");
-    System.out.println("G  - What is the goal of the game?");
-    System.out.println("M - How to Move");
-    System.out.println("H - Hero & Item Point Values");
-    System.out.println("V - Villian Point Values");
-    System.out.println("B - How to Battle");
-    System.out.println("E - Exit Help Menu");
-}
-public          char getInput() {
-Scanner in = new Scanner(System.in);
-String input = "";
-                                char rtn = 0 ;
-                while(input.length() < 1) {
+
+    public HelpMenuView() {
+    }
+
+    public void displayHelp() {
+        System.out.println("Please select an option:");
+        System.out.println("G  - What is the goal of the game?");
+        System.out.println("M - How to Move");
+        System.out.println("H - Hero & Item Point Values");
+        System.out.println("V - Villian Point Values");
+        System.out.println("B - How to Battle");
+        System.out.println("E - Exit Help Menu");
+    }
+
+    public char getInput() {
+        Scanner in = new Scanner(System.in);
+        String input = "";
+        char rtn = 0;
+        while (input.length() < 1) {
+            displayHelp();
+            input = in.nextLine();
+            if (input.length() < 1) {
+                System.out.println("Please select an option");
                 displayHelp();
-                input = in.nextLine();
-                if(input.length() < 1) {
-                                System.out.println("Please select an option");
-                                displayHelp();
-} else {
-rtn =input.toUpperCase().charAt(0);
-if(rtn != 'G' &&  rtn != 'M' && rtn != 'H' && rtn != 'V' && rtn != 'B' && rtn != 'E') {
-                System.out.println("Please select a valid input.");
-                input = "";
-}
-}
+            } else {
+                rtn = input.toUpperCase().charAt(0);
+                if (rtn != 'G' && rtn != 'M' && rtn != 'H' && rtn != 'V' && rtn != 'B' && rtn != 'E') {
+                    System.out.println("Please select a valid input.");
+                    input = "";
                 }
-    return rtn;
-}
+            }
+        }
+        return rtn;
+    }
 
- 
-public void doAction(char input) {
-                    
-             
-switch(input) {
-    
+    public void doAction(char input) {
 
-case 'G' :
-showGoalHelp();
-break;
-case 'M' :
-showMoveHelp();
-break;
-case 'H':
-showHeroPoints();
-break;
-case 'V':
-showVillianPoints();
-break;
-case 'B':
-showBattleHelp();
-break;
-case 'E':
-exitGameHelp();
-break;
+        switch (input) {
 
-default:
-System.out.println("INPUT ERROR");
-}
-}
+            case 'G':
+                showGoalHelp();
+                break;
+            case 'M':
+                showMoveHelp();
+                break;
+            case 'H':
+                showHeroPoints();
+                break;
+            case 'V':
+                showVillianPoints();
+                break;
+            case 'B':
+                showBattleHelp();
+                break;
+            case 'E':
+                exitGameHelp();
+                break;
+
+            default:
+                System.out.println("INPUT ERROR");
+        }
+    }
 
     private void showGoalHelp() {
         throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.

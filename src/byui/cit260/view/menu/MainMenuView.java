@@ -11,65 +11,66 @@ import java.util.Scanner;
  *
  * @author Cindy Glunt
  */
-
 public class MainMenuView {
-                public MainMenuView() {
-}
-public void displayMenu() {
-    System.out.println("Please select an option:");
-    System.out.println("S  - Start New Game");
-    System.out.println("O - Open Saved Game");
-    System.out.println("H - Help Menu");
-    System.out.println("E - Exit Game");
-}
-public          char getInput() {
-Scanner in = new Scanner(System.in);
-String input = "";
-                                char rtn = 0 ;
-                while(input.length() < 1) {
-                displayMenu();
-                input = in.nextLine();
-                if(input.length() < 1) {
-                                System.out.println("Please select an option");
-                                displayMenu();
-} else {
-rtn =input.toUpperCase().charAt(0);
-if(rtn != 'S' &&  rtn != 'O' && rtn != 'H' && rtn != 'E') {
-                System.out.println("Please select a valid input.");
-                input = "";
-}
-}
+
+    public MainMenuView() {
+    }
+
+    public void displayMenu() {
+        System.out.println("Please select an option:");
+        System.out.println("S  - Start New Game");
+        System.out.println("O - Open Saved Game");
+        System.out.println("H - Help Menu");
+        System.out.println("E - Exit Game");
+        char in = getInput();
+        doAction(in);
+    }
+
+    public char getInput() {
+        Scanner in = new Scanner(System.in);
+        String input = "";
+        char rtn = 0;
+        while (input.length() < 1) {
+            input = in.nextLine();
+            if (input.length() < 1) {
+                System.out.println("Please select an option");
+            } else {
+                rtn = input.toUpperCase().charAt(0);
+                if (rtn != 'S' && rtn != 'O' && rtn != 'H' && rtn != 'E') {
+                    System.out.println("Please select a valid input.");
+                    input = "";
                 }
-    return rtn;
-}
+            }
+        }
+        return rtn;
+    }
 
- 
-public void doAction(char input) {
-                    
-             
-switch(input) {
-    
+    public void doAction(char input) {
 
-case 'S' :
-startNewGame();
-break;
-case 'O' :
-openGame();
-break;
-case 'H':
-showHelpMenu();
-break;
-case 'E':
-exitGame();
-break;
+        switch (input) {
 
-default:
-System.out.println("INPUT ERROR");
-}
-}
+            case 'S':
+                startNewGame();
+                break;
+            case 'O':
+                openGame();
+                break;
+            case 'H':
+                showHelpMenu();
+                break;
+            case 'E':
+                exitGame();
+                break;
+
+            default:
+                System.out.println("INPUT ERROR");
+        }
+    }
 
     private void startNewGame() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("You selected start new game");
+        displayMenu();
     }
 
     private void openGame() {
@@ -77,11 +78,14 @@ System.out.println("INPUT ERROR");
     }
 
     private void showHelpMenu() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelp();
+        displayMenu();
     }
 
     private void exitGame() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Thanks for playing!");
     }
 
     private static class Public {
