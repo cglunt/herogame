@@ -29,9 +29,21 @@ import byui.cit260.herogame.model.Tiles;
     public static void main(String[] args) {
 
     WelcomeView welcomeView = new WelcomeView();
-   welcomeView.displayBanner();
+   char in = mainView.getInput();
+   
+   System.out.println("YOU ENTERED " + in);
 
 }
+
+    private static class mainView {
+
+        private static char getInput() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public mainView() {
+        }
+    }
     }
 /*
    
