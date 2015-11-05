@@ -17,13 +17,18 @@ public class HelpMenuView {
     }
 
     public void displayHelp() {
-        System.out.println("Please select an option:");
-        System.out.println("G  - What is the goal of the game?");
-        System.out.println("M - How to Move");
-        System.out.println("H - Hero & Item Point Values");
-        System.out.println("V - Villian Point Values");
-        System.out.println("B - How to Battle");
-        System.out.println("E - Exit Help Menu");
+        char in;
+        do {
+            System.out.println("Please select an option:");
+            System.out.println("G  - What is the goal of the game?");
+            System.out.println("M - How to Move");
+            System.out.println("H - Hero & Item Point Values");
+            System.out.println("V - Villian Point Values");
+            System.out.println("B - How to Battle");
+            System.out.println("E - Exit Help Menu");
+            in = getInput();
+            doAction(in);
+        } while (in != 'E');
     }
 
     public char getInput() {
@@ -31,11 +36,9 @@ public class HelpMenuView {
         String input = "";
         char rtn = 0;
         while (input.length() < 1) {
-            displayHelp();
             input = in.nextLine();
             if (input.length() < 1) {
                 System.out.println("Please select an option");
-                displayHelp();
             } else {
                 rtn = input.toUpperCase().charAt(0);
                 if (rtn != 'G' && rtn != 'M' && rtn != 'H' && rtn != 'V' && rtn != 'B' && rtn != 'E') {
@@ -99,9 +102,4 @@ public class HelpMenuView {
         throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static class Public {
-
-        public Public() {
-        }
-    }
 }

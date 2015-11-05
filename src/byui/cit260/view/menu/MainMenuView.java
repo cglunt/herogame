@@ -88,9 +88,6 @@ public class MainMenuView {
         System.out.println("Thanks for playing!");
     }
 
-    private static class Public {
 
-        public Public() {
-        }
-    }
+    
 }
