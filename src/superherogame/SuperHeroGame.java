@@ -5,6 +5,7 @@
  */
 package superherogame;
 
+import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
 
 /**
@@ -23,21 +24,16 @@ public class SuperHeroGame {
     public static void main(String[] args) {
 
         WelcomeView welcomeView = new WelcomeView();
-        char in = mainView.getInput();
+        welcomeView.displayBanner();
 
-        System.out.println("YOU ENTERED " + in);
+        MainMenuView mainView = new MainMenuView();
+        mainView.displayMenu();
+//        char in = mainView.getInput();
 
+//        System.out.println("YOU ENTERED " + in);
     }
 
-    private static class mainView {
 
-        private static char getInput() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        public mainView() {
-        }
-    }
 }
 /*
    
