@@ -80,7 +80,7 @@ public class HelpMenuView {
     }
 
     private void showGoalHelp() {
-        GoalHelpView goalMenu = new GoalHelpView();
+        MovelHelpView goalMenu = new MovelHelpView();
         goalMenu.display();
     }
 

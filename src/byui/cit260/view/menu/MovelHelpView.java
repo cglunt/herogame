@@ -5,16 +5,15 @@
  */
 package byui.cit260.view.menu;
 
-import byui.cit260.herogame.model.Player;
 import java.util.Scanner;
 
 /**
  *
  * @author Cindy Glunt
  */
-public class GoalHelpView {
+public class MovelHelpView {
 
-public GoalHelpView() {
+public MovelHelpView() {
     }
 /*
  * To change this license header, choose License Headers in Project Properties.
