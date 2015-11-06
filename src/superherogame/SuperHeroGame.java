@@ -5,6 +5,7 @@
  */
 package superherogame;
 
+import byui.cit260.herogame.model.Game;
 import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView; 
 
@@ -16,7 +17,7 @@ import byui.cit260.view.menu.WelcomeView;
  * private static Object tileOne; private static Object playerOne;
  */
 public class SuperHeroGame {
-
+    private static Game currentGame;
     /**
      *
      * @param args
@@ -32,7 +33,13 @@ public class SuperHeroGame {
 
 //        System.out.println("YOU ENTERED " + in);
     }
-
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+    
+    public static void setCurrentGame(Game current) {
+        SuperHeroGame.currentGame = current;
+    }
 
 }
 /*

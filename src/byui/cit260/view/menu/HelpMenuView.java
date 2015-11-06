@@ -16,7 +16,7 @@ public class HelpMenuView {
     public HelpMenuView() {
     }
 
-    public void displayHelp() {
+    public void display() {
         char in;
         do {
             System.out.println("Please select an option:");
@@ -31,6 +31,7 @@ public class HelpMenuView {
         } while (in != 'E');
     }
 
+    
     public char getInput() {
         Scanner in = new Scanner(System.in);
         String input = "";
@@ -79,23 +80,28 @@ public class HelpMenuView {
     }
 
     private void showGoalHelp() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        GoalHelpView goalMenu = new GoalHelpView();
+        goalMenu.display();
     }
 
     private void showMoveHelp() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        MoveHelpView moveMenu = new MoveHelpView();
+        moveMenu.display();
     }
 
     private void showHeroPoints() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        HeroPointsView heroMenu = new HeroPointsView();
+        heroMenu.display();
     }
 
     private void showVillianPoints() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        VillianHelpView villianMenu = new VillianHelpView();
+        villianMenu.display();
     }
 
     private void showBattleHelp() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        BattleHelpView battleMenu = new BattleHelpView();
+        battleMenu.display();
     }
 
     private void exitGameHelp() {

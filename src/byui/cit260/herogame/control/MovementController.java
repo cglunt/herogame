@@ -13,8 +13,13 @@ import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Captive;
 import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Hero;
+import byui.cit260.herogame.model.Map;
 
 public class MovementController {
+
+    static Map createMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     Player p1;
     Captive c1;
     Item i1;
