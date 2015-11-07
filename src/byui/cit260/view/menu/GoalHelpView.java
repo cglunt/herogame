@@ -11,9 +11,9 @@ import java.util.Scanner;
  *
  * @author Cindy Glunt
  */
-public class MovelHelpView {
+public class GoalHelpView {
 
-public MovelHelpView() {
+public GoalHelpView() {
     }
 /*
  * To change this license header, choose License Headers in Project Properties.
