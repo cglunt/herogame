@@ -31,7 +31,6 @@ public class HelpMenuView {
         } while (in != 'E');
     }
 
-    
     public char getInput() {
         Scanner in = new Scanner(System.in);
         String input = "";
@@ -80,7 +79,7 @@ public class HelpMenuView {
     }
 
     private void showGoalHelp() {
-        MovelHelpView goalMenu = new MovelHelpView();
+        GoalHelpView goalMenu = new GoalHelpView();
         goalMenu.display();
     }
 
