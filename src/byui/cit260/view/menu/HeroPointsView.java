@@ -49,7 +49,8 @@ public HeroPointsView() {
     }
 
     private void doAction(char in) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
 
   

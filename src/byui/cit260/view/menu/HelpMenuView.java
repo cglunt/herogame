@@ -104,7 +104,8 @@ public class HelpMenuView {
     }
 
     private void exitGameHelp() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
 
 }
