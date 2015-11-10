@@ -74,7 +74,8 @@ public class MainMenuView {
     }
 
     private void openGame() {
-        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("You selected open a new game");
+        displayMenu();
     }
 
     private void showHelpMenu() {
