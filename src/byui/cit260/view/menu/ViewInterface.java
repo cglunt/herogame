@@ -12,7 +12,7 @@ package byui.cit260.view.menu;
 public interface ViewInterface {
     public void display() ;
     
-    public String getInput();
+    public char getInput();
     
-    public boolean doAction(Object input);
+    public boolean doAction(char input);
 }
