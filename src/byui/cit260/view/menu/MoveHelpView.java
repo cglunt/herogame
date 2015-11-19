@@ -5,54 +5,73 @@
  */
 package byui.cit260.view.menu;
 
-import java.util.Scanner;
-
 /**
  *
- * @author Cindy Glunt
+ * @author Cindy Glunt & Steph Ogden
  */
-public class MoveHelpView {
+public class MoveHelpView extends View {
 
-public MoveHelpView() {
-    }
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-    public void display() {
-        char in;
-        do { 
-            
-        System.out.println("………………………………………");
-        System.out.println("How to move on the Map & Collect Heroes or Items for your Avenger Team");
-        System.out.println("Still figuring out the details here... ");
-        System.out.println("………………………………………");
-        System.out.println("………………………………………");
-        System.out.println("………………………………………");
-        System.out.println("………………………………………");
-        System.out.println("Please enter E to Exit");
-        in = getInput().charAt(0);
-        doAction(in);
-        } while (in != 'E');
+    public MoveHelpView() {
+        super("Please select an option:\n" +
+                 "N - Move North\n" +
+                 "E - Move East\n" +
+                 "S - Move South\n" +
+                 "W - Move West\n" +
+                 "G - Save Game\n" +
+                 "Q - Quit to Main Menu\n"); 
     }
 
-    
-    
-    
-    public String getInput() {
-        Scanner in = new Scanner(System.in);
-        String choice=in.next().trim();
-        return choice;
+    /**
+     * This just calls a method based on the input
+     *
+     * @param input
+     */
+    @Override
+    public boolean doAction(char input) {
+
+        switch (input) {
+            case 'N':
+                moveNorth();
+                break;
+            case 'E':
+                moveEast();
+                break;
+            case 'S':
+                moveSouth();
+                break;
+            case 'W':
+                moveWest();
+                break;
+            case 'G':
+                saveGame();
+                break;
+            case 'Q':
+                return false;
+            default:
+                System.out.println("Please select a valid input");
+                break;
+        }
+
+        return true;
     }
 
-    private void doAction(char in) {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.display();
+    private void moveNorth() {
+        System.out.println("NOT IMPLEMENTED YET");
     }
 
-  
+    private void moveEast() {
+        System.out.println("NOT IMPLEMENTED YET");
+    }
 
+    private void moveSouth() {
+        System.out.println("NOT IMPLEMENTED YET");
+    }
+
+    private void moveWest() {
+        System.out.println("NOT IMPLEMENTED YET");
+    }
+
+    private void saveGame() {
+        System.out.println("NOT IMPLEMENTED YET");
+    }
 }
