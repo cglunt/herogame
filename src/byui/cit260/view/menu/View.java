@@ -11,35 +11,29 @@ import java.util.Scanner;
  *
  * @author Cynthia Glunt
  */
-public class View {
+public abstract class View implements ViewInterface {
     
-}
-
- private String menu;
-    
+    private String menu;
     public View(String menuString) {
         menu = menuString;
     }
     
     @Override
-    public void display() {
+    public void displayMenu() {
         boolean cont;
         
         do {
             System.out.println(menu);
-            //Then capture the character the user input
+ 
             char in = getInput();
-            //Then perform the action
+ 
             cont = doAction(in);
         } while (cont);
     }
     
-    /**
-     * This just get's the player's input
-     * @return 
-     */
+
     @Override
-     public char getInput() {
+    public char getInput() {
         Scanner in = new Scanner(System.in);
         String input = "";
         char rtn = 0;
@@ -57,3 +51,5 @@ public class View {
         }
         return rtn;
     }
+    
+}
