@@ -1,4 +1,5 @@
-/*
+
+        /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -11,21 +12,18 @@ import java.util.Scanner;
  *
  * @author Cindy Glunt
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
+    
+        super("Please select an option:\n" +
+              "S  - Start New Game\n" +
+              "O - Open Saved Game\n" +
+              "H - Help Menu\n" +
+              "E - Exit Game\n");
     }
 
-    public void displayMenu() {
-        System.out.println("Please select an option:");
-        System.out.println("S  - Start New Game");
-        System.out.println("O - Open Saved Game");
-        System.out.println("H - Help Menu");
-        System.out.println("E - Exit Game");
-        char in = getInput();
-        doAction(in);
-    }
-
+    @Override
     public char getInput() {
         Scanner in = new Scanner(System.in);
         String input = "";
@@ -45,7 +43,8 @@ public class MainMenuView {
         return rtn;
     }
 
-    public void doAction(char input) {
+    @Override
+    public boolean doAction(char input) {
 
         switch (input) {
 
@@ -59,34 +58,28 @@ public class MainMenuView {
                 showHelpMenu();
                 break;
             case 'E':
-                exitGame();
-                break;
-
+               return false;
             default:
-                System.out.println("INPUT ERROR");
+                System.out.println("Please select a valid option.");
         }
+        return true;
     }
 
     private void startNewGame() {
-//        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
-        System.out.println("You selected start new game");
-        displayMenu();
+        System.out.println("You selected start new game\n");
     }
 
     private void openGame() {
-        System.out.println("You selected open a new game");
-        displayMenu();
+        System.out.println("You selected open a new game\n");
     }
 
     private void showHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-        displayMenu();
     }
 
-    private void exitGame() {
-//        throw new UnsupportedOperationException("NOT IMPLEMENTED YET"); //To change body of generated methods, choose Tools | Templates.
-        System.out.println("Thanks for playing!");
-    }
+
+
+    
 
 }
