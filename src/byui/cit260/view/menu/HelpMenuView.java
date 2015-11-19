@@ -5,52 +5,28 @@
  */
 package byui.cit260.view.menu;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Cindy Glunt & Steph Ogden
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     public HelpMenuView() {
+ 
+            super("Please select an option:\n" 
+            + "G  - What is the goal of the game?\n" 
+            + "M - How to Move\n"
+            + "H - Hero & Item Point Values\n"
+            + "V - Villian Point Values\n"
+            + "B - How to Battle\n"
+            + "E - Exit Help Menu\n");
+
     }
 
-    public void display() {
-        char in;
-        do {
-            System.out.println("Please select an option:");
-            System.out.println("G  - What is the goal of the game?");
-            System.out.println("M - How to Move");
-            System.out.println("H - Hero & Item Point Values");
-            System.out.println("V - Villian Point Values");
-            System.out.println("B - How to Battle");
-            System.out.println("E - Exit Help Menu");
-            in = getInput();
-            doAction(in);
-        } while (in != 'E');
-    }
 
-    public char getInput() {
-        Scanner in = new Scanner(System.in);
-        String input = "";
-        char rtn = 0;
-        while (input.length() < 1) {
-            input = in.nextLine();
-            if (input.length() < 1) {
-                System.out.println("Please select an option");
-            } else {
-                rtn = input.toUpperCase().charAt(0);
-                if (rtn != 'G' && rtn != 'M' && rtn != 'H' && rtn != 'V' && rtn != 'B' && rtn != 'E') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            }
-        }
-        return rtn;
-    }
 
-    public void doAction(char input) {
+    @Override
+    public boolean doAction(char input) {
 
         switch (input) {
 
@@ -70,12 +46,12 @@ public class HelpMenuView {
                 showBattleHelp();
                 break;
             case 'E':
-                exitGameHelp();
-                break;
-
+                return false;
             default:
-                System.out.println("INPUT ERROR");
+                System.out.println("Please select a valid option.");
         }
+        
+        return true;
     }
 
     private void showGoalHelp() {
@@ -99,7 +75,7 @@ public class HelpMenuView {
     }
 
     private void showBattleHelp() {
-        BattleHelpView battleMenu = new BattleHelpView();
+        BattleViewMenu battleMenu = new BattleViewMenu();
         battleMenu.display();
     }
 
