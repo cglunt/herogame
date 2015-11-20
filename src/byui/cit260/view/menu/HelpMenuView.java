@@ -81,7 +81,7 @@ public class HelpMenuView extends View {
 
     private void exitGameHelp() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
     }
 
 }

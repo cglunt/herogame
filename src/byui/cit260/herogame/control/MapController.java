@@ -12,7 +12,7 @@ package byui.cit260.herogame.control;
 import byui.cit260.herogame.model.Map;
 import byui.cit260.herogame.model.Tiles;
 
-public class TilesController {
+public class MapController {
     private Tiles tile1;
     private Map map1;
     

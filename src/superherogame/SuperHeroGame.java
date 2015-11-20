@@ -30,7 +30,7 @@ public class SuperHeroGame {
         welcomeView.displayBanner();
 
         MainMenuView mainView = new MainMenuView();
-        mainView.displayMenu();
+        mainView.display();
 //        char in = mainView.getInput();
 
 //        System.out.println("YOU ENTERED " + in);

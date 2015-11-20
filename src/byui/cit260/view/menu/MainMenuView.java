@@ -6,8 +6,6 @@
  */
 package byui.cit260.view.menu;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Cindy Glunt
@@ -23,25 +21,7 @@ public class MainMenuView extends View {
               "E - Exit Game\n");
     }
 
-    @Override
-    public char getInput() {
-        Scanner in = new Scanner(System.in);
-        String input = "";
-        char rtn = 0;
-        while (input.length() < 1) {
-            input = in.nextLine();
-            if (input.length() < 1) {
-                System.out.println("Please select an option");
-            } else {
-                rtn = input.toUpperCase().charAt(0);
-                if (rtn != 'S' && rtn != 'O' && rtn != 'H' && rtn != 'E') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
-            }
-        }
-        return rtn;
-    }
+
 
     @Override
     public boolean doAction(char input) {

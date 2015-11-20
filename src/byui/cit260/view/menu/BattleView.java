@@ -14,13 +14,14 @@ public class BattleView extends View {
     public BattleView() {
         super("Please select an option:\n" +
                  "A - Attack \n" +
-                 "R - Attempt to run\n"); +
+                 "R - Attempt to run\n"); 
     }
     
     /**
      * This just calls a method based on the input
      *
      * @param input
+     * @return 
      */
     @Override
     public boolean doAction(char input) {
