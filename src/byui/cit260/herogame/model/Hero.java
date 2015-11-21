@@ -9,7 +9,7 @@ package byui.cit260.herogame.model;
 
 /**
  *
- * @author Steph Ogden
+ * @author Steph Ogden & Cynthia Glunt
  */
 
 //relationship 'is a'

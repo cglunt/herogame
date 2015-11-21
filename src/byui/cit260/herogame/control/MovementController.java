@@ -7,7 +7,7 @@ package byui.cit260.herogame.control;
 
 /**
  *
- * @author Steph Ogden
+ * @author Steph Ogden & Cynthia Glunt
  */
 import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Captive;
