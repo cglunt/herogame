@@ -5,9 +5,12 @@
  */
 package superherogame;
 
+import byui.cit260.herogame.model.CharacterModel;
 import byui.cit260.herogame.model.Game;
+import byui.cit260.herogame.model.Hero;
 import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
+import java.util.ArrayList;
 
 /**
  * * import byui.cit260.herogame.model.Item; import
@@ -43,7 +46,20 @@ public class SuperHeroGame {
     public static void setCurrentGame(Game current) {
         SuperHeroGame.currentGame = current;
     }
-
+    public static ArrayList<CharacterModel> getCharacters() {
+        ArrayList<CharacterModel> characters=new ArrayList<> ();
+        Hero superman = new Hero(10);
+        superman.setDescription("Faster than a speeding bullet.");
+        superman.setName("Superman");
+        characters.add(superman);
+        
+        Hero spiderman = new Hero(10);
+        spiderman.setDescription("Climbs walls.");
+        spiderman.setName("Spiderman");
+        characters.add(spiderman);
+        
+        return characters;
+    }
 }
 /*
    

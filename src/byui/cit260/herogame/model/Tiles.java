@@ -16,7 +16,7 @@ public class Tiles implements Serializable{
     
   // class instance variables
         private Item item;
-        private String characterModel;
+        private CharacterModel character;
         private Player player;
         
     public Tiles(Item item, String character, Player player) {
@@ -37,11 +37,11 @@ public class Tiles implements Serializable{
         this.item = item;
     }
 
-    public String getCharacter() {
+    public CharacterModel getCharacter() {
         return characterModel;
     }
 
-    public void setCharacter(String character) {
+    public void setCharacter(characterModel character) {
         this.characterModel = character;
     }
 

@@ -24,6 +24,13 @@ public class GameController {
         currentGame.setMap(MovementController.createMap());
         return currentGame;
     }
+    
+        public Game createNewGame(String player,int height, int width){
+        currentGame = new Game();
+        currentGame.setPlayer(createNewPlayer(player));
+        currentGame.setMap(MovementController.createMap(height,width));
+        return currentGame;
+    }
 
     public void saveGame(){
         
