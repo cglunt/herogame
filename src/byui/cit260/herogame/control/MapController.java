@@ -22,7 +22,6 @@ public class MapController {
         
     }
     public void setMapPath(String row, String col){
-        map1.setRow(row);
-        map1.setColumn(col);
+
     }
 }

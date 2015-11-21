@@ -6,6 +6,10 @@
  */
 package byui.cit260.view.menu;
 
+import byui.cit260.herogame.control.GameController;
+import byui.cit260.herogame.control.MovementController
+import byui.cit260.herogame.model.Game;
+
 /**
  *
  * @author Cindy Glunt
@@ -46,7 +50,10 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        System.out.println("You selected start new game\n");
+        GameController startNew = new GameController();
+        System.out.println("What size game do you want to play? S - Small M - Medium L - Large");
+        
+        char mapSize = this.getInput();
     }
 
     private void openGame() {

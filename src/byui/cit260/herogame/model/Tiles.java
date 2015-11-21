@@ -19,15 +19,12 @@ public class Tiles implements Serializable{
         private CharacterModel character;
         private Player player;
         
-    public Tiles(Item item, String character, Player player) {
-        this.item = item;
-        this.characterModel = character;
-        this.player = player;
+    public Tiles() {
+   //     this.item = item;
+   //     this.character = character;
+   //     this.player = player;
     }
 
-    public Tiles() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public Item getItem() {
         return item;
@@ -38,11 +35,11 @@ public class Tiles implements Serializable{
     }
 
     public CharacterModel getCharacter() {
-        return characterModel;
+        return this.character;
     }
 
-    public void setCharacter(characterModel character) {
-        this.characterModel = character;
+    public void setCharacter(CharacterModel character) {
+        this.character = character;
     }
 
     public Player getPlayer() {
@@ -57,7 +54,7 @@ public class Tiles implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 13 * hash + Objects.hashCode(this.item);
-        hash = 13 * hash + Objects.hashCode(this.characterModel);
+        hash = 13 * hash + Objects.hashCode(this.character);
         hash = 13 * hash + Objects.hashCode(this.player);
         return hash;
     }
@@ -74,7 +71,7 @@ public class Tiles implements Serializable{
         if (!Objects.equals(this.item, other.item)) {
             return false;
         }
-        if (!Objects.equals(this.characterModel, other.characterModel)) {
+        if (!Objects.equals(this.character, other.character)) {
             return false;
         }
         if (!Objects.equals(this.player, other.player)) {
@@ -85,7 +82,7 @@ public class Tiles implements Serializable{
 
     @Override
     public String toString() {
-        return "Tiles{" + "item=" + item + ", characterModel=" + characterModel + ", player=" + player + '}';
+        return "Tiles{" + "item=" + this.item + ", characterModel=" + this.character + ", player=" + this.player + '}';
     }
 
 

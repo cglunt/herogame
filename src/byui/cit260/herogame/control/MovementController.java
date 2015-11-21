@@ -25,6 +25,12 @@ public class MovementController {
     public static final int LARGE = 10;
     public static final int MEDIUM = 8;
     public static final int SMALL = 6;
+    public Player p1;
+    public Captive c1;
+    public Item i1;
+    public Hero h1;
+    public BattleController b;
+    public Tiles t1;
 
     public static Map createMap() {
         return createMap(MEDIUM, MEDIUM);
@@ -35,7 +41,7 @@ public class MovementController {
         Tiles[][] tiles=new Tiles[height][width];
         ArrayList<CharacterModel> characters = SuperHeroGame.getCharacters();
         Collections.shuffle(characters);
-        
+      
         for(int i=0, position=0; i<tiles.length && position<characters.size();i++)
             for(int j=0; j<tiles[i].length && position<characters.size();j++) {
                 Tiles t1=new Tiles();
@@ -46,11 +52,7 @@ public class MovementController {
     }
     
 
-    Player p1;
-    Captive c1;
-    Item i1;
-    Hero h1;
-    BattleController b;
+
 
     public void movePlayer() {
         p1.setDescription("moving");

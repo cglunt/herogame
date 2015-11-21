@@ -7,43 +7,40 @@ package byui.cit260.herogame.control;
 
 /**
  *
- *  @author Steph Ogden
+ * @author Steph Ogden
  */
 import byui.cit260.herogame.model.Game;
 import byui.cit260.herogame.model.Player;
 
-
 public class GameController {
-    
+
     private Game currentGame;
-    
-    
-    public Game createNewGame(String player){
+
+  //  public Game createNewGame(String player){
+    //      currentGame = new Game();
+    //      currentGame.setPlayer(createNewPlayer(player));
+    //      currentGame.setMap(MovementController.createMap());
+    //      return currentGame;
+    //  }
+    public Game createNewGame(String player, char mapSize) {
         currentGame = new Game();
         currentGame.setPlayer(createNewPlayer(player));
-        currentGame.setMap(MovementController.createMap());
-        return currentGame;
-    }
-    
-        public Game createNewGame(String player,int height, int width){
-        currentGame = new Game();
-        currentGame.setPlayer(createNewPlayer(player));
-        currentGame.setMap(MovementController.createMap(height,width));
+        currentGame.setMap(MovementController.createMap(height, width));
         return currentGame;
     }
 
-    public void saveGame(){
-        
+    public void saveGame() {
+
     }
-    public void exitGame(){
+
+    public void exitGame() {
         exitGame();
     }
 
-    public Player createNewPlayer(String player){
+    public Player createNewPlayer(String player) {
         Player newPlayer = new Player();
         newPlayer.setName(player);
         return newPlayer;
     }
 
 }
-
