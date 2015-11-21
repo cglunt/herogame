@@ -25,7 +25,7 @@ public class GameController {
     public Game createNewGame(String player, char mapSize) {
         currentGame = new Game();
         currentGame.setPlayer(createNewPlayer(player));
-        currentGame.setMap(MovementController.createMap(height, width));
+        currentGame.setMap(MovementController.createMap(mapSize));
         return currentGame;
     }
 

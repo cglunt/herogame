@@ -32,27 +32,38 @@ public class MovementController {
     public BattleController b;
     public Tiles t1;
 
-    public static Map createMap() {
-        return createMap(MEDIUM, MEDIUM);
+    public static Map createDefaultMap() {
+        return createMap('M');
     }
 
-    public static Map createMap(int height, int width) {
+    public static Map createMap(char mapSize) {
+        int height=0;
+        int width=0;
+
+        if (mapSize == 'M') {
+            height = MEDIUM;
+            width = MEDIUM;
+        } else if (mapSize == 'S') {
+            height = SMALL;
+            width = SMALL;
+        } else if (mapSize == 'L') {
+            height = LARGE;
+            width = LARGE;
+        }
         Map map = new Map();
-        Tiles[][] tiles=new Tiles[height][width];
+        Tiles[][] tiles = new Tiles[height][width];
         ArrayList<CharacterModel> characters = SuperHeroGame.getCharacters();
         Collections.shuffle(characters);
-      
-        for(int i=0, position=0; i<tiles.length && position<characters.size();i++)
-            for(int j=0; j<tiles[i].length && position<characters.size();j++) {
-                Tiles t1=new Tiles();
+
+        for (int i = 0, position = 0; i < tiles.length && position < characters.size(); i++) {
+            for (int j = 0; j < tiles[i].length && position < characters.size(); j++) {
+                Tiles t1 = new Tiles();
                 t1.setCharacter(characters.get(position));
-                tiles[i][j]=t1;
+                tiles[i][j] = t1;
             }
+        }
         return map;
     }
-    
-
-
 
     public void movePlayer() {
         p1.setDescription("moving");
@@ -74,5 +85,5 @@ public class MovementController {
     public void saveCaptive(String newname) {
         c1.setName(newname);
     }
-   
+
 }
