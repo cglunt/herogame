@@ -70,7 +70,7 @@ public class HelpMenuView extends View {
     }
 
     private void showVillianPoints() {
-        VillianHelpView villianMenu = new VillianHelpView();
+        VillianHelpView villianMenu = new VillianHelpView() {};
         villianMenu.display();
     }
 

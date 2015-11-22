@@ -7,7 +7,6 @@
 package byui.cit260.view.menu;
 
 import byui.cit260.herogame.control.GameController;
-import byui.cit260.herogame.control.MovementController;
 import byui.cit260.herogame.model.Game;
 
 /**
