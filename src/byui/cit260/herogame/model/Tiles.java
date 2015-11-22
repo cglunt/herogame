@@ -7,24 +7,23 @@ package byui.cit260.herogame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author Cindy Glunt
  */
-public class Tiles implements Serializable{
-     
-    
-  // class instance variables
-        private Item item;
-        private CharacterModel character;
-        private Player player;
-        
+public class Tiles implements Serializable {
+
+    // class instance variables
+    private Item item;
+    private CharacterModel character;
+    private Player player;
+
     public Tiles() {
    //     this.item = item;
-   //     this.character = character;
-   //     this.player = player;
+        //     this.character = character;
+        //     this.player = player;
     }
-
 
     public Item getItem() {
         return item;
@@ -85,9 +84,4 @@ public class Tiles implements Serializable{
         return "Tiles{" + "item=" + this.item + ", characterModel=" + this.character + ", player=" + this.player + '}';
     }
 
-
-
-        
-    
-        
 }

@@ -10,9 +10,10 @@ package byui.cit260.view.menu;
  * @author Cynthia Glunt
  */
 public interface ViewInterface {
+
     public void display();
-    
+
     public char getInput();
-    
+
     public boolean doAction(char input);
 }

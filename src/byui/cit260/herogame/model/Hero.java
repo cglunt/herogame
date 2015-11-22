@@ -5,13 +5,10 @@
  */
 package byui.cit260.herogame.model;
 
-
-
 /**
  *
  * @author Steph Ogden & Cynthia Glunt
  */
-
 //relationship 'is a'
 public class Hero extends CharacterModel {
 
@@ -56,10 +53,9 @@ public class Hero extends CharacterModel {
     public Hero(double Strength) {
         this.Strength = Strength;
     }
+
     public Hero() {
-        
-    }
-  
-    
 
     }
+
+}

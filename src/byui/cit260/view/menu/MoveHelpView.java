@@ -12,13 +12,13 @@ package byui.cit260.view.menu;
 public class MoveHelpView extends View {
 
     public MoveHelpView() {
-        super("Please select an option:\n" +
-                 "N - Move North\n" +
-                 "E - Move East\n" +
-                 "S - Move South\n" +
-                 "W - Move West\n" +
-                 "G - Save Game\n" +
-                 "Q - Quit to Main Menu\n"); 
+        super("Please select an option:\n"
+                + "N - Move North\n"
+                + "E - Move East\n"
+                + "S - Move South\n"
+                + "W - Move West\n"
+                + "G - Save Game\n"
+                + "Q - Quit to Main Menu\n");
     }
 
     /**

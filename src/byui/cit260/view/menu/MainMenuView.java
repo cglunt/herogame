@@ -1,5 +1,5 @@
 
-        /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,15 +16,13 @@ import byui.cit260.herogame.model.Game;
 public class MainMenuView extends View {
 
     public MainMenuView() {
-    
-        super("Please select an option:\n" +
-              "S  - Start New Game\n" +
-              "O - Open Saved Game\n" +
-              "H - Help Menu\n" +
-              "E - Exit Game\n");
+
+        super("Please select an option:\n"
+                + "S  - Start New Game\n"
+                + "O - Open Saved Game\n"
+                + "H - Help Menu\n"
+                + "E - Exit Game\n");
     }
-
-
 
     @Override
     public boolean doAction(char input) {
@@ -41,7 +39,7 @@ public class MainMenuView extends View {
                 showHelpMenu();
                 break;
             case 'E':
-               return false;
+                return false;
             default:
                 System.out.println("Please select a valid option.");
         }
@@ -56,7 +54,6 @@ public class MainMenuView extends View {
         String playerName = System.console().readLine();
         startNew.createNewGame(playerName, mapSize);
 
-        
     }
 
     private void openGame() {
@@ -67,9 +64,5 @@ public class MainMenuView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-
-
-
-    
 
 }

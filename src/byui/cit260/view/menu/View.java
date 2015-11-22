@@ -12,25 +12,25 @@ import java.util.Scanner;
  * @author Cynthia Glunt
  */
 public abstract class View implements ViewInterface {
-    
+
     private String menu;
+
     public View(String menuString) {
         menu = menuString;
     }
-    
+
     @Override
     public void display() {
         boolean cont;
-        
+
         do {
             System.out.println(menu);
- 
+
             char in = getInput();
- 
+
             cont = doAction(in);
         } while (cont);
     }
-    
 
     @Override
     public char getInput() {
@@ -51,5 +51,5 @@ public abstract class View implements ViewInterface {
         }
         return rtn;
     }
-    
+
 }

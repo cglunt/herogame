@@ -10,18 +10,16 @@ import java.util.Objects;
 
 /**
  *
- * @author Cindy Glunt 
+ * @author Cindy Glunt
  */
-public class Item implements Serializable{
-    
+public class Item implements Serializable {
+
     // class instance variables
     private String name;
     private String power;
 
     public Item() {
     }
-    
-    
 
     public String getName() {
         return name;
@@ -66,6 +64,5 @@ public class Item implements Serializable{
         }
         return Objects.equals(this.power, other.power);
     }
-    
-    
+
 }

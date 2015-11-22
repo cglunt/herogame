@@ -37,8 +37,8 @@ public class MovementController {
     }
 
     public static Map createMap(char mapSize) {
-        int height=0;
-        int width=0;
+        int height = 0;
+        int width = 0;
 
         if (mapSize == 'M') {
             height = MEDIUM;

@@ -7,14 +7,17 @@ package byui.cit260.herogame.model;
 
 import java.io.Serializable;
 import java.util.Arrays;
+
 /**
  *
  * @author Cindy Glunt
  */
 public class Map implements Serializable {
+
     private Tiles[][] map;
+
     public Map() {
-        
+
     }
 
     @Override
@@ -46,8 +49,8 @@ public class Map implements Serializable {
     public void setMap(Tiles[][] map) {
         this.map = map;
     }
-    
+
 }
 
 // class instance variables
-  
+

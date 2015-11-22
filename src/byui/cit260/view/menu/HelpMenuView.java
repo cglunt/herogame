@@ -12,18 +12,16 @@ package byui.cit260.view.menu;
 public class HelpMenuView extends View {
 
     public HelpMenuView() {
- 
-            super("Please select an option:\n" 
-            + "G  - What is the goal of the game?\n" 
-            + "M - How to Move\n"
-            + "H - Hero & Item Point Values\n"
-            + "V - Villian Point Values\n"
-            + "B - How to Battle\n"
-            + "E - Exit Help Menu\n");
+
+        super("Please select an option:\n"
+                + "G  - What is the goal of the game?\n"
+                + "M - How to Move\n"
+                + "H - Hero & Item Point Values\n"
+                + "V - Villian Point Values\n"
+                + "B - How to Battle\n"
+                + "E - Exit Help Menu\n");
 
     }
-
-
 
     @Override
     public boolean doAction(char input) {
@@ -50,7 +48,7 @@ public class HelpMenuView extends View {
             default:
                 System.out.println("Please select a valid option.");
         }
-        
+
         return true;
     }
 
@@ -70,7 +68,8 @@ public class HelpMenuView extends View {
     }
 
     private void showVillianPoints() {
-        VillianHelpView villianMenu = new VillianHelpView() {};
+        VillianHelpView villianMenu = new VillianHelpView() {
+        };
         villianMenu.display();
     }
 

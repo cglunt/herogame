@@ -53,6 +53,5 @@ public class Villains extends CharacterModel {
     public Villains(double Strength) {
         this.Strength = Strength;
     }
-    
-    
+
 }

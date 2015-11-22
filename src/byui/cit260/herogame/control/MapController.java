@@ -7,21 +7,23 @@ package byui.cit260.herogame.control;
 
 /**
  *
- *  @author Steph Ogden & Cynthia Glunt
+ * @author Steph Ogden & Cynthia Glunt
  */
 import byui.cit260.herogame.model.Map;
 import byui.cit260.herogame.model.Tiles;
 
 public class MapController {
+
     private Tiles tile1;
     private Map map1;
-    
-    public Tiles calcRandomTile(){
+
+    public Tiles calcRandomTile() {
         tile1.getItem();
         return tile1;
-        
+
     }
-    public void setMapPath(String row, String col){
+
+    public void setMapPath(String row, String col) {
 
     }
 }

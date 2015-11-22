@@ -9,17 +9,17 @@ import java.util.Objects;
 
 /**
  *
- * @author Cindy Glunt 
+ * @author Cindy Glunt
  */
-public class Captive extends CharacterModel{
-    
+public class Captive extends CharacterModel {
+
     // class instance variables
-       private String Message;
+    private String Message;
 
     public Captive(String Message) {
         this.Message = Message;
     }
-       
+
     public String getMessage() {
         return Message;
     }
@@ -54,10 +54,5 @@ public class Captive extends CharacterModel{
     public String toString() {
         return "Captive{" + "Message=" + Message + '}';
     }
- 
-       
-    
-    
-}
 
-   
+}

@@ -8,19 +8,16 @@ package byui.cit260.herogame.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  *
  * @author Steph Ogden
  */
 public class CharacterModel implements Serializable {
-    
-    
-    
-  // class instance variables
-        private String name;
-        private String description;
-        private double hitPoints;
+
+    // class instance variables
+    private String name;
+    private String description;
+    private double hitPoints;
 
     public CharacterModel() {
     }
@@ -83,11 +80,5 @@ public class CharacterModel implements Serializable {
     public String toString() {
         return "CharacterModel{" + "name=" + name + ", description=" + description + ", hitPoints=" + hitPoints + '}';
     }
-        
-        
-        
- 
-
-
 
 }
