@@ -16,7 +16,7 @@ public class HelpMenuView extends View {
         super("Please select an option:\n"
                 + "G  - What is the goal of the game?\n"
                 + "M - How to Move\n"
-                + "H - Hero & Item Point Values\n"
+                + "H - Characters & Item Strenth Value Lists\n"
                 + "V - Villian Point Values\n"
                 + "B - How to Battle\n"
                 + "E - Exit Help Menu\n");
@@ -35,10 +35,7 @@ public class HelpMenuView extends View {
                 showMoveHelp();
                 break;
             case 'H':
-                showHeroPoints();
-                break;
-            case 'V':
-                showVillianPoints();
+                showCharacterView();
                 break;
             case 'B':
                 showBattleHelp();
@@ -62,15 +59,9 @@ public class HelpMenuView extends View {
         moveMenu.display();
     }
 
-    private void showHeroPoints() {
-        HeroPointsView heroMenu = new HeroPointsView();
-        heroMenu.display();
-    }
-
-    private void showVillianPoints() {
-        VillianHelpView villianMenu = new VillianHelpView() {
-        };
-        villianMenu.display();
+    private void showCharacterView() {
+        CharacterViewMenu characterMenu = new CharacterViewMenu();
+        characterMenu.display();
     }
 
     private void showBattleHelp() {
