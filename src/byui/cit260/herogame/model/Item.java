@@ -21,6 +21,10 @@ public class Item implements Serializable {
     public Item() {
     }
 
+    public Item(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getName() {
         return name;
     }
@@ -63,6 +67,10 @@ public class Item implements Serializable {
             return false;
         }
         return Objects.equals(this.power, other.power);
+    }
+
+    public void setDescription(String save_me_Tony_Stark) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

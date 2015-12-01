@@ -7,6 +7,7 @@
 package byui.cit260.view.menu;
 
 import byui.cit260.herogame.control.GameController;
+import byui.cit260.herogame.exceptions.MovementControllerException;
 import byui.cit260.herogame.model.Game;
 
 /**
@@ -47,13 +48,20 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        GameController startNew = new GameController();
-        System.out.println("What size game do you want to play? S - Small M - Medium L - Large");
-        char mapSize = this.getInput();
-        startNew.createNewPlayer("What is your Name?");
-        String playerName = System.console().readLine();
-        startNew.createNewGame(playerName, mapSize);
-
+        try {
+            GameController startNew = new GameController();
+            System.out.println("What size game do you want to play? S - Small M - Medium L - Large");
+            char mapSize = this.getInput();
+            //  startNew.createNewPlayer("What is your Name?");
+            //String playerName = System.console().readLine();
+            startNew.createNewGame("sample", mapSize);
+            MoveHelpView moveMenu = new MoveHelpView();
+            moveMenu.display();
+            //remove once implemented in movementcontroller
+            throw new MovementControllerException();
+        } catch (MovementControllerException e) {
+            System.err.println("Exception Calleed");
+        }
     }
 
     private void openGame() {

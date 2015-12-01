@@ -43,10 +43,6 @@ public abstract class View implements ViewInterface {
                 System.out.println("Please select an option");
             } else {
                 rtn = input.toUpperCase().charAt(0);
-                if (rtn != 'S' && rtn != 'O' && rtn != 'H' && rtn != 'E') {
-                    System.out.println("Please select a valid input.");
-                    input = "";
-                }
             }
         }
         return rtn;

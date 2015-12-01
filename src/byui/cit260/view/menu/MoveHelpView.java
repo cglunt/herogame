@@ -54,7 +54,7 @@ public class MoveHelpView extends View {
 
         return true;
     }
-
+//add to movement controller
     private void moveNorth() {
         System.out.println("NOT IMPLEMENTED YET");
     }
@@ -70,7 +70,7 @@ public class MoveHelpView extends View {
     private void moveWest() {
         System.out.println("NOT IMPLEMENTED YET");
     }
-
+// move to mainmenuview
     private void saveGame() {
         System.out.println("NOT IMPLEMENTED YET");
     }

@@ -15,6 +15,10 @@ public class Captive extends CharacterModel {
 
     // class instance variables
     private String Message;
+    
+    public Captive(){
+        
+    }
 
     public Captive(String Message) {
         this.Message = Message;

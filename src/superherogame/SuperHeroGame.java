@@ -5,9 +5,11 @@
  */
 package superherogame;
 
+import byui.cit260.herogame.model.Captive;
 import byui.cit260.herogame.model.CharacterModel;
 import byui.cit260.herogame.model.Game;
 import byui.cit260.herogame.model.Hero;
+import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Villains;
 import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
@@ -180,40 +182,128 @@ public class SuperHeroGame {
         skeletor.setName("Skeletor");
         characters.add(skeletor);
 
-     //   Captive tinytim = new Captive(9);
-        //    tinytim.setDescription("Merry Christmas, Everyone.");
-        //    tinytim.setName("Tiny Tim");
-        //   characters.add(tinytim);
+        Captive tinytim = new Captive();
+        tinytim.setDescription("Merry Christmas, Everyone.");
+        tinytim.setName("Tiny Tim");
+        characters.add(tinytim);
+
+        Captive oliver = new Captive();
+        oliver.setDescription("Please sir, I want some mo.");
+        oliver.setName("Oliver");
+        characters.add(oliver);
+
+        Captive roadrunner = new Captive();
+        roadrunner.setDescription("Beep, Beep");
+        roadrunner.setName("Road Runner");
+        characters.add(roadrunner);
+
+        Captive gusgus = new Captive();
+        gusgus.setDescription("Save Me Cinderelli");
+        gusgus.setName("Gus Gus");
+        characters.add(gusgus);
+
+        Captive princesspeach = new Captive();
+        princesspeach.setDescription("Save Me Mario!");
+        princesspeach.setName("Princess Peach");
+        characters.add(princesspeach);
+
+        Captive oliveoil = new Captive();
+        oliveoil.setDescription("Save Me Popeye!");
+        oliveoil.setName("Olive Oil");
+        characters.add(oliveoil);
+
+        Captive bugsbunny = new Captive();
+        bugsbunny.setDescription("What's up Doc?");
+        bugsbunny.setName("Bugs Bunny");
+        characters.add(bugsbunny);
+
+        Captive princessleia = new Captive();
+        princessleia.setDescription("Help me Obi Wan Kanobe... you're my only hope!");
+        princessleia.setName("Princess Leia");
+        characters.add(princessleia);
+
+        Captive zelda = new Captive();
+        zelda.setDescription("Save me Link!");
+        zelda.setName("Princess Zelda");
+        characters.add(zelda);
+
+        Captive sleepingbeauty = new Captive();
+        sleepingbeauty.setDescription("Once upon a dream...");
+        sleepingbeauty.setName("Sleeping Beauty");
+        characters.add(sleepingbeauty);
+
+        Captive pepperpots = new Captive();
+        pepperpots.setDescription("Save me Tony Stark!");
+        pepperpots.setName("Pepper Pots");
+        characters.add(pepperpots);
+
+        // same for items as well
+        for (int i = 0; i < 75; ++i) {
+            Captive empty = new Captive();
+            empty.setDescription("Nobody is here - Lucky Day");
+            empty.setName("Empty");
+            characters.add(empty);
+        }
         return characters;
+
+    }
+
+    public static ArrayList<Item> getItems() {
+        ArrayList<Item> items = new ArrayList<>();
+
+        Item sword = new Item(8);
+        sword.setName("Sword");
+        items.add(sword);
+
+        Item axe = new Item(6);
+        axe.setName("Axe");
+        items.add(sword);
+
+        Item chainmail = new Item(5);
+        chainmail.setName("Chain Mail");
+        items.add(chainmail);
+
+        Item helmet = new Item(5);
+        helmet.setName("Helmet");
+        items.add(helmet);
+
+        Item ironsuit = new Item(10);
+        ironsuit.setName("Iron Man Suit");
+        items.add(ironsuit);
+
+        Item machete = new Item(6);
+        machete.setName("Machete");
+        items.add(machete);
+
+        Item freehug = new Item(2);
+        freehug.setName("Free Hug");
+        items.add(freehug);
+
+        Item hammer = new Item(5);
+        hammer.setName("Thor's Hammer");
+        items.add(hammer);
+
+        Item gummibearjuice = new Item(4);
+        gummibearjuice.setName("Gummi Bear Juice");
+        items.add(gummibearjuice);
+
+        Item antidote = new Item(10);
+        antidote.setName("Antidote");
+        items.add(antidote);
+
+        for (int i = 0; i < 75; ++i) {
+            Item empty = new Item();
+            empty.setName("Empty");
+            items.add(empty);
+        }
+
+        return items;
     }
 }
+
 /*
    
-        
- @SuppressWarnings("LocalVariableHidesMemberVariable")
- Tiles tileOne;
- tileOne = new Tiles();
-        
- Item Bow;
- Bow = new Item();
-        
- tileOne.setItem("Bow");
-        
- String tileInfo;
- tileInfo = tileOne.toString();
- System.out.println(tileInfo);
-        
- Player playerOne;
- playerOne = new Player();
-        
- playerOne.setItem("What is your name");
-        
- String playerInfo;
- playerInfo = playerOne.toString();
- boolean PlayerInfo = false;
- System.out.println(PlayerInfo);
-            
- }
+
     
 
  public static Object getTileOne() {

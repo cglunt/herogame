@@ -39,7 +39,7 @@ public class MovementController {
     public static Map createMap(char mapSize) {
         int height = 0;
         int width = 0;
-
+//can change height to row and width to column (optional)
         if (mapSize == 'M') {
             height = MEDIUM;
             width = MEDIUM;
@@ -53,18 +53,21 @@ public class MovementController {
         Map map = new Map();
         Tiles[][] tiles = new Tiles[height][width];
         ArrayList<CharacterModel> characters = SuperHeroGame.getCharacters();
+        ArrayList<Item> items = SuperHeroGame.getItems();
         Collections.shuffle(characters);
-
+        Collections.shuffle(items);
         for (int i = 0, position = 0; i < tiles.length && position < characters.size(); i++) {
             for (int j = 0; j < tiles[i].length && position < characters.size(); j++) {
                 Tiles t1 = new Tiles();
                 t1.setCharacter(characters.get(position));
+                t1.setItem(items.get(position));
                 tiles[i][j] = t1;
             }
         }
         return map;
     }
 
+    //include exception here when player tries to move out of bounds
     public void movePlayer() {
         p1.setDescription("moving");
     }

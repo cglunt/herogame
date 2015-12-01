@@ -41,7 +41,7 @@ public class HelpMenuView extends View {
                 showBattleHelp();
                 break;
             case 'E':
-                return false;
+                exitGameHelp();
             default:
                 System.out.println("Please select a valid option.");
         }
