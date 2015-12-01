@@ -15,13 +15,7 @@ import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
 import java.util.ArrayList;
 
-/**
- * * import byui.cit260.herogame.model.Item; import
- * byui.cit260.herogame.model.Player; import byui.cit260.herogame.model.Tiles;
- */
-/**
- * private static Object tileOne; private static Object playerOne;
- */
+
 public class SuperHeroGame {
 
     private static Game currentGame;
@@ -301,35 +295,6 @@ public class SuperHeroGame {
     }
 }
 
-/*
-   
 
     
 
- public static Object getTileOne() {
- return tileOne;
- }
-
- public static void setplayerOne(Object playerOne) {
- SuperHeroGame.playerOne = playerOne;
- }
-    
- public static Object getPlayerOne() {
- return playerOne;
- }
-
- public static void setTileOne(Object playerOne) {
- SuperHeroGame.playerOne = tileOne;
- }
- }
-    
-
-
-
- Player mainCharacter = new Player();
- WelcomeView welcomeView = new WelcomeView();
- WelcomeView.displayBanner();
- 
- Player.setName(welcomeView.getPlayerName());
- WelcomeView.displayPlayerNameBanner(player);
- * */
