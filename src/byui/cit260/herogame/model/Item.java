@@ -20,7 +20,15 @@ public class Item implements Serializable {
 
     public Item() {
     }
+    private double Strength;
 
+    public double getStrength() {
+        return Strength;
+    }
+
+    public void setStrength(double Strength) {
+        this.Strength = Strength;
+    }
     public Item(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -70,6 +78,18 @@ public class Item implements Serializable {
     }
 
     public void setDescription(String save_me_Tony_Stark) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getHitPoints() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getDurability() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDurability(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

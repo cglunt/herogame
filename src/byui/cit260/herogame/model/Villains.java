@@ -11,6 +11,7 @@ package byui.cit260.herogame.model;
  */
 //relationship 'is a'
 public class Villains extends CharacterModel {
+    public static double MAX_VILLAINS_DAMAGE;
 
     // class instance variables
     private double Strength;

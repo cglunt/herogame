@@ -8,7 +8,6 @@ package byui.cit260.view.menu;
 
 import byui.cit260.herogame.control.GameController;
 import byui.cit260.herogame.exceptions.MovementControllerException;
-import byui.cit260.herogame.model.Game;
 
 /**
  *
@@ -22,6 +21,7 @@ public class MainMenuView extends View {
                 + "S  - Start New Game\n"
                 + "O - Open Saved Game\n"
                 + "H - Help Menu\n"
+                + "G - Save Game\n"
                 + "E - Exit Game\n");
     }
 
@@ -38,6 +38,9 @@ public class MainMenuView extends View {
                 break;
             case 'H':
                 showHelpMenu();
+                break;
+            case 'G':
+                saveGame();
                 break;
             case 'E':
                 return false;
@@ -66,6 +69,10 @@ public class MainMenuView extends View {
 
     private void openGame() {
         System.out.println("You selected open a new game\n");
+    }
+
+    private void saveGame() {
+        System.out.println("NOT IMPLEMENTED YET");
     }
 
     private void showHelpMenu() {

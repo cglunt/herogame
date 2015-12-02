@@ -16,21 +16,18 @@ import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Map;
 import byui.cit260.herogame.model.Tiles;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
 import superherogame.SuperHeroGame;
+import static superherogame.SuperHeroGame.getCurrentGame;
 
 public class MovementController {
 
     public static final int LARGE = 10;
     public static final int MEDIUM = 8;
     public static final int SMALL = 6;
-    public Player p1;
-    public Captive c1;
-    public Item i1;
-    public Hero h1;
-    public BattleController b;
-    public Tiles t1;
+
 
     public static Map createDefaultMap() {
         return createMap('M');
@@ -68,25 +65,30 @@ public class MovementController {
     }
 
     //include exception here when player tries to move out of bounds
-    public void movePlayer() {
-        p1.setDescription("moving");
+
+    /**
+     *
+     * @param p
+     * @param coordinates
+     * @return
+     */
+        public static int movePlayer(Player p, Point coordinates) {
+        
+        Map map = getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+//        if (newRow < 0 || newRow >= Map createMap(char SIZE) || newColumn < 0 || newColumn >=Map createMap(char Size)) {
+//            return -1;
+//        }
+          
+         if (newRow < 0 || newRow > map.getWidth() || newColumn > map.getHeight()) {
+         
+         }
+     return 0;
+    
     }
 
-    public void acquireItem() {
-        i1 = new Item();
-    }
 
-    public void beginBattle() {
-        b.teamAttack(0);
-        b.villainAttack(0);
-    }
-
-    public void acquireHero() {
-        h1 = new Hero(0);
-    }
-
-    public void saveCaptive(String newname) {
-        c1.setName(newname);
-    }
 
 }

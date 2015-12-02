@@ -17,8 +17,19 @@ public class Map implements Serializable {
     private Tiles[][] map;
 
     public Map() {
-
     }
+    
+    public int getHeight() {
+       
+        return map.length;
+    }
+    
+    public int getWidth() {
+        
+        return map[0].length;
+    }
+    
+    
 
     @Override
     public int hashCode() {

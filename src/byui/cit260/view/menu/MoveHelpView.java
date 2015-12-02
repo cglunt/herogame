@@ -17,7 +17,6 @@ public class MoveHelpView extends View {
                 + "E - Move East\n"
                 + "S - Move South\n"
                 + "W - Move West\n"
-                + "G - Save Game\n"
                 + "Q - Quit to Main Menu\n");
     }
 
@@ -41,9 +40,6 @@ public class MoveHelpView extends View {
                 break;
             case 'W':
                 moveWest();
-                break;
-            case 'G':
-                saveGame();
                 break;
             case 'Q':
                 return false;
@@ -70,8 +66,5 @@ public class MoveHelpView extends View {
     private void moveWest() {
         System.out.println("NOT IMPLEMENTED YET");
     }
-// move to mainmenuview
-    private void saveGame() {
-        System.out.println("NOT IMPLEMENTED YET");
-    }
+
 }

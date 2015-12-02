@@ -14,24 +14,34 @@ import java.util.Scanner;
  */
 public class Player extends CharacterModel {
 
-    //Player has a collection of Heroes
+  //  public static double MAX_DAMAGE;
 
+    //Player has a collection of Heroes
     private String name;
     private ArrayList<Hero> team;
     //Player has a collection of Item
     private ArrayList<Item> item;
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your first name:");
-
-        String player;
-
-        player = input.next();
-    }
-
     public void setItem(String what_is_your_name) {
 
+    }
+    public double getStrength() {
+        double strength = 0;
+        for (Hero team1 : team) {
+            strength += team1.getStrength();
+        }
+        for (Item item1 : item) {
+            strength += item1.getStrength();
+        }
+        return strength;
+    }
+
+    public Object getItems() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void applyDamage(int villainsDamage) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

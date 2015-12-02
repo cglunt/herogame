@@ -10,5 +10,7 @@ package byui.cit260.herogame.exceptions;
  * @author Cindy
  */
 public class MapControllerException {
+
+
     
 }
