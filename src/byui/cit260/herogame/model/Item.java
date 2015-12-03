@@ -20,17 +20,18 @@ public class Item implements Serializable {
 
     public Item() {
     }
-    private double Strength;
+    private double strength;
 
     public double getStrength() {
-        return Strength;
+        return strength;
     }
 
     public void setStrength(double Strength) {
-        this.Strength = Strength;
+        this.strength = Strength;
     }
+
     public Item(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.strength = i;
     }
 
     public String getName() {

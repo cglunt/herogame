@@ -36,6 +36,8 @@ public class Player extends CharacterModel {
         return strength;
     }
 
+    
+    //TODO implement these
     public Object getItems() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

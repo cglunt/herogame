@@ -5,6 +5,9 @@
  */
 package byui.cit260.view.menu;
 
+import byui.cit260.herogame.model.Player;
+import superherogame.SuperHeroGame;
+
 /**
  *
  * @author Cindy Glunt & Steph Ogden
@@ -51,7 +54,10 @@ public class MoveHelpView extends View {
         return true;
     }
 //add to movement controller
-    private void moveNorth() {
+    private void moveNorth() { //TODO IMPLEMENT ME
+        
+        Player p = SuperHeroGame.currentGame.getPlayer(); //How to get the player
+        
         System.out.println("NOT IMPLEMENTED YET");
     }
 
