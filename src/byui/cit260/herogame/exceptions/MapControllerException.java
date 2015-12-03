@@ -9,7 +9,29 @@ package byui.cit260.herogame.exceptions;
  *
  * @author Cindy
  */
-public class MapControllerException {
+public class MapControllerException extends Exception {
+
+    public MapControllerException() {
+    }
+
+    public MapControllerException(String string) {
+        super(string);
+    }
+
+    public MapControllerException(String string, Throwable thrwbl) {
+        super(string, thrwbl);
+    }
+
+    public MapControllerException(Throwable thrwbl) {
+        super(thrwbl);
+    }
+
+    public MapControllerException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
+        super(string, thrwbl, bln, bln1);
+    }
+    
+
+
 
 
     

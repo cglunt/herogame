@@ -9,11 +9,10 @@ package byui.cit260.herogame.control;
  *
  * @author Steph Ogden & Cynthia Glunt
  */
+import byui.cit260.herogame.exceptions.MapControllerException;
 import byui.cit260.herogame.model.Player;
-import byui.cit260.herogame.model.Captive;
 import byui.cit260.herogame.model.CharacterModel;
 import byui.cit260.herogame.model.Item;
-import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Map;
 import byui.cit260.herogame.model.Tiles;
 import java.awt.Point;
@@ -71,24 +70,24 @@ public class MovementController {
      * @param p
      * @param coordinates
      * @return
+     * @throws byui.cit260.herogame.exceptions.MapControllerException
      */
-        public static int movePlayer(Player p, Point coordinates) {
+        public static int movePlayer(Player p, Point coordinates) throws MapControllerException {
         
         Map map = getCurrentGame().getMap();
         int newRow = coordinates.x-1;
         int newColumn = coordinates.y-1;
+
         
-//        if (newRow < 0 || newRow >= Map createMap(char SIZE) || newColumn < 0 || newColumn >=Map createMap(char Size)) {
-//            return -1;
-//        }
-          
          if (newRow < 0 || newRow > map.getWidth() || newColumn > map.getHeight()) {
+         throw new MapControllerException("Can not move Player to this Tile"
+                 + "because that space is outside "
+                 + "the maps bounds.");
          
-         }
-     return 0;
     
     }
+        return 0;
 
 
-
+        }
 }
