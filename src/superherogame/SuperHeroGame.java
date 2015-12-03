@@ -30,10 +30,11 @@ public class SuperHeroGame {
         welcomeView.displayBanner();
 
         MainMenuView mainView = new MainMenuView();
-        try {
+        mainView.display();
     } 
     catch (Throwable te) {
         System.out.println(te.getMessage());
+        te.printStackTrace();
         welcomeView.displayBanner();
         
 }
