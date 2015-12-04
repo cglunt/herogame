@@ -11,6 +11,7 @@ package byui.cit260.herogame.control;
  */
 import byui.cit260.herogame.model.Game;
 import byui.cit260.herogame.model.Player;
+import superherogame.SuperHeroGame;
 
 public class GameController {
 
@@ -26,6 +27,9 @@ public class GameController {
         currentGame = new Game();
         currentGame.setPlayer(createNewPlayer(player));
         currentGame.setMap(MovementController.createMap(mapSize));
+        //TODO set the starting location of the player
+        
+        SuperHeroGame.currentGame = currentGame; //Initializing singleton instance
         return currentGame;
     }
 

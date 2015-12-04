@@ -15,10 +15,9 @@ import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
 import java.util.ArrayList;
 
-
 public class SuperHeroGame {
 
-    private static Game currentGame;
+    public static Game currentGame;
 
     /**
      *
@@ -30,14 +29,13 @@ public class SuperHeroGame {
         welcomeView.displayBanner();
 
         MainMenuView mainView = new MainMenuView();
-        mainView.display();
-    } 
-    catch (Throwable te) {
-        System.out.println(te.getMessage());
-        te.printStackTrace();
-        welcomeView.displayBanner();
-        
-}
+        try {
+            mainView.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            welcomeView.displayBanner();
+
+        }
 //        char in = mainView.getInput();
 
 //        System.out.println("YOU ENTERED " + in);
@@ -301,7 +299,3 @@ public class SuperHeroGame {
         return items;
     }
 }
-
-
-    
-

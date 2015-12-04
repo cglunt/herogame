@@ -27,7 +27,6 @@ public class MovementController {
     public static final int MEDIUM = 8;
     public static final int SMALL = 6;
 
-
     public static Map createDefaultMap() {
         return createMap('M');
     }
@@ -64,7 +63,6 @@ public class MovementController {
     }
 
     //include exception here when player tries to move out of bounds
-
     /**
      *
      * @param p
@@ -72,22 +70,19 @@ public class MovementController {
      * @return
      * @throws byui.cit260.herogame.exceptions.MapControllerException
      */
-        public static int movePlayer(Player p, Point coordinates) throws MapControllerException {
-        
+    public static int movePlayer(Player p, Point coordinates) throws MapControllerException {
+
         Map map = getCurrentGame().getMap();
-        int newRow = coordinates.x-1;
-        int newColumn = coordinates.y-1;
+        int newRow = coordinates.x - 1;
+        int newColumn = coordinates.y - 1;
 
-        
-         if (newRow < 0 || newRow > map.getWidth() || newColumn > map.getHeight()) {
-         throw new MapControllerException("Can not move Player to this Tile"
-                 + "because that space is outside "
-                 + "the maps bounds.");
-         
-    
-    }
-        return 0;
-
+        if (newRow < 0 || newRow > map.getWidth() || newColumn > map.getHeight()) {
+            throw new MapControllerException("Can not move Player to this Tile"
+                    + "because that space is outside "
+                    + "the maps bounds.");
 
         }
+        return 0;
+
+    }
 }

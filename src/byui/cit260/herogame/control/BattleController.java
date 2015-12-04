@@ -9,6 +9,7 @@ package byui.cit260.herogame.control;
  *
  * @author Steph Ogden and Cynthia Glunt
  */
+import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Villains;
