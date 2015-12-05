@@ -62,14 +62,23 @@ public class MoveHelpView extends View {
     }
 
     private void moveEast() {
+        
+        Player p = SuperHeroGame.currentGame.getPlayer();
+        
         System.out.println("NOT IMPLEMENTED YET");
     }
 
     private void moveSouth() {
+        
+        Player p = SuperHeroGame.currentGame.getPlayer();
+        
         System.out.println("NOT IMPLEMENTED YET");
     }
 
     private void moveWest() {
+        
+        Player p = SuperHeroGame.currentGame.getPlayer();
+        
         System.out.println("NOT IMPLEMENTED YET");
     }
 

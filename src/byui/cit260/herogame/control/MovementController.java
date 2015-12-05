@@ -70,6 +70,8 @@ public class MovementController {
      * @return
      * @throws byui.cit260.herogame.exceptions.MapControllerException
      */
+
+    
     public static int movePlayer(Player p, Point coordinates) throws MapControllerException {
 
         Map map = getCurrentGame().getMap();
@@ -85,4 +87,61 @@ public class MovementController {
         return 0;
 
     }
+    
+    public void moveForward(Player p) throws MapControllerException {
+        Map map = getCurrentGame().getMap();
+        Point row = p.getCoordinates(); 
+
+        if (row.y + 1 >= map.getHeight()) 
+            throw new MapControllerException("Can not move Player to this Tile"
+                    + "because that space is outside"
+                    + "the maps bounds.");
+                    
+        row.y ++;
+        p.setCoordinates(row);
+        
+        }
+    
+        public void moveBack(Player p) throws MapControllerException {
+        Map map = getCurrentGame().getMap();
+        Point row = p.getCoordinates(); 
+
+        if (row.y - 1 >= map.getHeight()) 
+            throw new MapControllerException("Can not move Player to this Tile"
+                    + "because that space is outside"
+                    + "the maps bounds.");
+                    
+        row.y ++;
+        p.setCoordinates(row);
+        
+        }
+        
+            public void moveLeft(Player p) throws MapControllerException {
+        Map map = getCurrentGame().getMap();
+        Point row = p.getCoordinates(); 
+
+        if (row.x - 1 >= map.getHeight()) 
+            throw new MapControllerException("Can not move Player to this Tile"
+                    + "because that space is outside"
+                    + "the maps bounds.");
+                    
+        row.y ++;
+        p.setCoordinates(row);
+        
+        }
+        
+                public void moveRight(Player p) throws MapControllerException {
+        Map map = getCurrentGame().getMap();
+        Point row = p.getCoordinates(); 
+
+        if (row.x + 1 >= map.getHeight()) 
+            throw new MapControllerException("Can not move Player to this Tile"
+                    + "because that space is outside"
+                    + "the maps bounds.");
+                    
+        row.y ++;
+        p.setCoordinates(row);
+        
+        }
+        
 }

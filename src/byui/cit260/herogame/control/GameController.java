@@ -17,12 +17,6 @@ public class GameController {
 
     private Game currentGame;
 
-    //  public Game createNewGame(String player){
-    //      currentGame = new Game();
-    //      currentGame.setPlayer(createNewPlayer(player));
-    //      currentGame.setMap(MovementController.createMap());
-    //      return currentGame;
-    //  }
     public Game createNewGame(String player, char mapSize) {
         currentGame = new Game();
         currentGame.setPlayer(createNewPlayer(player));

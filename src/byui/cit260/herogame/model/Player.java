@@ -5,6 +5,7 @@
  */
 package byui.cit260.herogame.model;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 /**
@@ -42,6 +43,14 @@ public class Player extends CharacterModel {
     }
 
     public void applyDamage(int villainsDamage) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Point getCoordinates() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCoordinates(Point row) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
