@@ -84,6 +84,7 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveSouth() {
@@ -95,6 +96,7 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveWest() {
@@ -106,6 +108,7 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
     class TileView extends View {
         public TileView(Tiles t) {
