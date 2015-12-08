@@ -24,7 +24,7 @@ public class SuperHeroGame {
      * @param args
      */
     public static void main(String[] args) {
-        currentGame=new Game();
+        currentGame = new Game();
         WelcomeView welcomeView = new WelcomeView();
         welcomeView.displayBanner();
 
@@ -32,6 +32,7 @@ public class SuperHeroGame {
         try {
             mainView.display();
         } catch (Throwable te) {
+            te.printStackTrace();
             System.out.println(te.getMessage());
             welcomeView.displayBanner();
 
@@ -135,6 +136,13 @@ public class SuperHeroGame {
         jessicajones.setDescription("Alias Private Investigator");
         jessicajones.setName("Jessica Jones");
         characters.add(jessicajones);
+
+        for (int i = 0; i < 75; ++i) {
+            Hero empty = new Hero();
+            empty.setDescription("Nobody is here - Try Again");
+            empty.setName("Empty");
+            characters.add(empty);
+        }
 
         Villains magneto = new Villains(9);
         magneto.setDescription("Evil Genius.");
@@ -292,12 +300,11 @@ public class SuperHeroGame {
 
         for (int i = 0; i < 75; ++i) {
             Item empty = new Item();
-            empty.setName("Empty");
+            empty.setName("No Items Here - Try Again");
             items.add(empty);
         }
 
         return items;
     }
-    
-    
+
 }

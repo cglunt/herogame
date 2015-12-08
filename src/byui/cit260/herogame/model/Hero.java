@@ -25,7 +25,7 @@ public class Hero extends CharacterModel {
 
     @Override
     public String toString() {
-        return "Hero{" + "Strength=" + Strength + '}';
+        return getName() + " with a strength of " + getStrength() + " " + getDescription();
     }
 
     @Override

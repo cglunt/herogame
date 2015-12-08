@@ -47,6 +47,7 @@ public class MovementController {
         }
         Map map = new Map();
         Tiles[][] tiles = new Tiles[height][width];
+        map.setMap(tiles);
         ArrayList<CharacterModel> characters = SuperHeroGame.getCharacters();
         ArrayList<Item> items = SuperHeroGame.getItems();
         Collections.shuffle(characters);
@@ -86,6 +87,7 @@ public class MovementController {
         return 0;
 
     }
+    
 
     public static Player moveForward(Player p) throws MapControllerException {
         Map map = getCurrentGame().getMap();
@@ -151,5 +153,11 @@ public class MovementController {
         return p;
 
     }
+    
+    public static Tiles getTile(Point p) {
+        Tiles[][] m = superherogame.SuperHeroGame.getCurrentGame().getMap().getMap();
+        return m[p.x][p.y];
+    }
+    
 
 }

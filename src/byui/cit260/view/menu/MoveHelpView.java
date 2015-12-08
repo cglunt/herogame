@@ -7,7 +7,11 @@ package byui.cit260.view.menu;
 
 import byui.cit260.herogame.control.MovementController;
 import byui.cit260.herogame.exceptions.MapControllerException;
+import byui.cit260.herogame.model.Captive;
+import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Player;
+import byui.cit260.herogame.model.Tiles;
+import byui.cit260.herogame.model.Villains;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import superherogame.SuperHeroGame;
@@ -65,10 +69,10 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveForward(p);
         } catch (MapControllerException ex) {
-            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveEast() {
@@ -77,7 +81,7 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveRight(p);
         } catch (MapControllerException ex) {
-            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+             System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
     }
@@ -88,7 +92,7 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveBack(p);
         } catch (MapControllerException ex) {
-            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+             System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
     }
@@ -99,9 +103,21 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveLeft(p);
         } catch (MapControllerException ex) {
-            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+             System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
     }
-
+    class TileView extends View {
+        public TileView(Tiles t) {
+            super("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
+                    (t.getCharacter() instanceof Hero)?"Hero " + t.getCharacter().toString():
+                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown"));
+            
+        }
+     
+        @Override
+        public boolean doAction(char input) {
+            return false;
+        }
+    }
 }
