@@ -9,8 +9,12 @@ package byui.cit260.herogame.control;
  *
  * @author Steph Ogden & Cynthia Glunt
  */
+import byui.cit260.herogame.exceptions.MapControllerException;
 import byui.cit260.herogame.model.Game;
 import byui.cit260.herogame.model.Player;
+import java.awt.Point;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import superherogame.SuperHeroGame;
 
 public class GameController {
@@ -21,7 +25,12 @@ public class GameController {
         currentGame = new Game();
         currentGame.setPlayer(createNewPlayer(player));
         currentGame.setMap(MovementController.createMap(mapSize));
-        //TODO set the starting location of the player
+        try {
+            MovementController.movePlayer(currentGame.getPlayer(), new Point(0,0));
+        } catch (MapControllerException ex) {
+            Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Error");
+        }
         
         SuperHeroGame.currentGame = currentGame; //Initializing singleton instance
         return currentGame;

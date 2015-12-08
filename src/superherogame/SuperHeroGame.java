@@ -24,7 +24,7 @@ public class SuperHeroGame {
      * @param args
      */
     public static void main(String[] args) {
-
+        currentGame=new Game();
         WelcomeView welcomeView = new WelcomeView();
         welcomeView.displayBanner();
 
@@ -298,4 +298,6 @@ public class SuperHeroGame {
 
         return items;
     }
+    
+    
 }

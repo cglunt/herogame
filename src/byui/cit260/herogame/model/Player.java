@@ -19,7 +19,21 @@ public class Player extends CharacterModel {
     //Player has a collection of Heroes
     private String name;
     private ArrayList<Hero> team;
-    //Player has a collection of Item
+    private Point coordinates;
+
+    public Player() {
+        coordinates=new Point();
+    }
+    
+    public Point getCoordinates() {
+        return coordinates;
+    }
+    
+    
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
     private ArrayList<Item> item;
 
     public void setItem(String what_is_your_name) {
@@ -36,22 +50,33 @@ public class Player extends CharacterModel {
         return strength;
     }
 
-    
-    //TODO implement these
-    public Object getItems() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     public void applyDamage(int villainsDamage) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Point getCoordinates() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public ArrayList<Hero> getTeam() {
+        return team;
     }
 
-    public void setCoordinates(Point row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setTeam(ArrayList<Hero> team) {
+        this.team = team;
     }
+
+    public ArrayList<Item> getItems() {
+        return item;
+    }
+
+    public void setItem(ArrayList<Item> item) {
+        this.item = item;
+    }
+
+    public ArrayList<Item> getItem() {
+        return item;
+    }
+
+
 
 }

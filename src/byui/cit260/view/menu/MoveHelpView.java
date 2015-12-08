@@ -5,7 +5,11 @@
  */
 package byui.cit260.view.menu;
 
+import byui.cit260.herogame.control.MovementController;
+import byui.cit260.herogame.exceptions.MapControllerException;
 import byui.cit260.herogame.model.Player;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import superherogame.SuperHeroGame;
 
 /**
@@ -54,32 +58,50 @@ public class MoveHelpView extends View {
         return true;
     }
 //add to movement controller
-    private void moveNorth() { //TODO IMPLEMENT ME
-        
-        Player p = SuperHeroGame.currentGame.getPlayer(); //How to get the player
-        
-        System.out.println("NOT IMPLEMENTED YET");
+
+    private void moveNorth() {
+
+        Player p = SuperHeroGame.currentGame.getPlayer();
+        try {
+            p = MovementController.moveForward(p);
+        } catch (MapControllerException ex) {
+            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SuperHeroGame.currentGame.setPlayer(p);
+
     }
 
     private void moveEast() {
-        
+
         Player p = SuperHeroGame.currentGame.getPlayer();
-        
-        System.out.println("NOT IMPLEMENTED YET");
+        try {
+            p = MovementController.moveRight(p);
+        } catch (MapControllerException ex) {
+            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SuperHeroGame.currentGame.setPlayer(p);
     }
 
     private void moveSouth() {
-        
+
         Player p = SuperHeroGame.currentGame.getPlayer();
-        
-        System.out.println("NOT IMPLEMENTED YET");
+        try {
+            p = MovementController.moveBack(p);
+        } catch (MapControllerException ex) {
+            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SuperHeroGame.currentGame.setPlayer(p);
     }
 
     private void moveWest() {
-        
+
         Player p = SuperHeroGame.currentGame.getPlayer();
-        
-        System.out.println("NOT IMPLEMENTED YET");
+        try {
+            p = MovementController.moveLeft(p);
+        } catch (MapControllerException ex) {
+            Logger.getLogger(MoveHelpView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        SuperHeroGame.currentGame.setPlayer(p);
     }
 
 }

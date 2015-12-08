@@ -28,6 +28,8 @@ public class WelcomeView {
         System.out.println("………………………………………");
 
     }
+    
+    
 
     public String getPlayerName() {
         Scanner in = new Scanner(System.in);
