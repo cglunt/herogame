@@ -72,7 +72,7 @@ public class MoveHelpView extends View {
             System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-        new TileView(MovementController.getTile(p.getCoordinates())).display();
+             displayTile(MovementController.getTile(p.getCoordinates()));
     }
 
     private void moveEast() {
@@ -84,7 +84,7 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-        new TileView(MovementController.getTile(p.getCoordinates())).display();
+             displayTile(MovementController.getTile(p.getCoordinates()));
     }
 
     private void moveSouth() {
@@ -96,7 +96,7 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-        new TileView(MovementController.getTile(p.getCoordinates())).display();
+             displayTile(MovementController.getTile(p.getCoordinates()));
     }
 
     private void moveWest() {
@@ -108,19 +108,25 @@ public class MoveHelpView extends View {
              System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-        new TileView(MovementController.getTile(p.getCoordinates())).display();
+             displayTile(MovementController.getTile(p.getCoordinates()));
     }
-    class TileView extends View {
-        public TileView(Tiles t) {
-            super("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
+    
+    private void displayTile(Tiles t) {
+        System.out.println(("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
                     (t.getCharacter() instanceof Hero)?"Hero " + t.getCharacter().toString():
-                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown"));
-            
-        }
-     
-        @Override
-        public boolean doAction(char input) {
-            return false;
-        }
-    }
+                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown")));
+    } 
+//    class TileView extends View {
+//        public TileView(Tiles t) {
+//            super("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
+//                    (t.getCharacter() instanceof Hero)?"Hero " + t.getCharacter().toString():
+//                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown"));
+//            
+//        }
+//     
+//        @Override
+//        public boolean doAction(char input) {
+//            return true;
+//        }
+//    }
 }

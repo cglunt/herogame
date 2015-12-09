@@ -137,12 +137,13 @@ public class SuperHeroGame {
         jessicajones.setName("Jessica Jones");
         characters.add(jessicajones);
 
-        for (int i = 0; i < 75; ++i) {
-            Hero empty = new Hero();
-            empty.setDescription("Nobody is here - Try Again");
-            empty.setName("Empty");
-            characters.add(empty);
-        }
+        /*        for (int i = 0; i < 25; ++i) {
+        Hero empty = new Hero();
+        empty.setDescription("Nobody is here - Try Again");
+        empty.setName("Empty");
+        characters.add(empty);
+        }*/
+        
 
         Villains magneto = new Villains(9);
         magneto.setDescription("Evil Genius.");
@@ -245,12 +246,12 @@ public class SuperHeroGame {
         characters.add(pepperpots);
 
         // same for items as well
-        for (int i = 0; i < 75; ++i) {
-            Captive empty = new Captive();
-            empty.setDescription("Nobody is here - Lucky Day");
-            empty.setName("Empty");
-            characters.add(empty);
-        }
+        //for (int i = 0; i < 25; ++i) {
+        //    Captive empty = new Captive();
+         //   empty.setDescription("Nobody is here - Lucky Day");
+        //    empty.setName("Empty");
+        //    characters.add(empty);
+        //}
         return characters;
 
     }
@@ -298,7 +299,7 @@ public class SuperHeroGame {
         antidote.setName("Antidote");
         items.add(antidote);
 
-        for (int i = 0; i < 75; ++i) {
+        for (int i = 0; i < 25; ++i) {
             Item empty = new Item();
             empty.setName("No Items Here - Try Again");
             items.add(empty);
