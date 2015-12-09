@@ -13,11 +13,41 @@ import byui.cit260.herogame.model.Item;
 import byui.cit260.herogame.model.Villains;
 import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class SuperHeroGame {
 
     public static Game currentGame;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        SuperHeroGame.logFile = logFile;
+    }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        SuperHeroGame.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        SuperHeroGame.inFile = inFile;
+    }
 
     /**
      *

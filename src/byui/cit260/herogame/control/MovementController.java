@@ -56,8 +56,11 @@ public class MovementController {
             for (int j = 0; j < tiles[i].length && position < characters.size(); j++) {
                 Tiles t1 = new Tiles();
                 t1.setCharacter(characters.get(position));
-                t1.setItem(items.get(position));
+                if(position < items.size()) {
+                    t1.setItem(items.get(position));
+                }
                 tiles[i][j] = t1;
+                position++;
             }
         }
         return map;
@@ -115,7 +118,7 @@ public class MovementController {
                     + "the maps bounds.");
         }
 
-        row.y++;
+        row.y--;
         p.setCoordinates(row);
 
         return p;
@@ -131,7 +134,7 @@ public class MovementController {
                     + "the maps bounds.");
         }
 
-        row.y++;
+        row.x--;
         p.setCoordinates(row);
 
         return p;
@@ -147,7 +150,7 @@ public class MovementController {
                     + "the maps bounds.");
         }
 
-        row.y++;
+        row.x++;
         p.setCoordinates(row);
         
         return p;
