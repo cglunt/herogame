@@ -29,7 +29,7 @@ public class BattleController {
         
         v.setHitPoints(v.getHitPoints() - playerDamage);
         
-        if(v.getHitPoints() <= 0) {
+        if(v.getHitPoints() > 0) {
             return true;
         } else {
             return false;
@@ -43,12 +43,17 @@ public class BattleController {
         
         p.applyDamage(villainsDamage);
         
-        if(p.getHitPoints() <= 0) {
+        if(p.getHitPoints() > 0) {
             return true;
         } else {
             return false;
         }
     }
     
- 
+    public static boolean attack(Player p, Villains v) {
+        while(attackVillains(p,v) && attackPlayer(p,v));
+        return(p.getHitPoints() > 0)?true:false;
+        
+        
+    }
 }

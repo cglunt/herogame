@@ -5,6 +5,7 @@
  */
 package byui.cit260.view.menu;
 
+import byui.cit260.herogame.control.BattleController;
 import byui.cit260.herogame.control.MovementController;
 import byui.cit260.herogame.exceptions.MapControllerException;
 import byui.cit260.herogame.model.Captive;
@@ -72,7 +73,7 @@ public class MoveHelpView extends View {
             System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-             displayTile(MovementController.getTile(p.getCoordinates()));
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveEast() {
@@ -81,10 +82,10 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveRight(p);
         } catch (MapControllerException ex) {
-             System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-             displayTile(MovementController.getTile(p.getCoordinates()));
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveSouth() {
@@ -93,10 +94,10 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveBack(p);
         } catch (MapControllerException ex) {
-             System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-             displayTile(MovementController.getTile(p.getCoordinates()));
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
 
     private void moveWest() {
@@ -105,28 +106,48 @@ public class MoveHelpView extends View {
         try {
             p = MovementController.moveLeft(p);
         } catch (MapControllerException ex) {
-             System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
         SuperHeroGame.currentGame.setPlayer(p);
-             displayTile(MovementController.getTile(p.getCoordinates()));
+        new TileView(MovementController.getTile(p.getCoordinates())).display();
     }
-    
-    private void displayTile(Tiles t) {
-        System.out.println(("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
-                    (t.getCharacter() instanceof Hero)?"Hero " + t.getCharacter().toString():
-                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown")));
-    } 
-//    class TileView extends View {
-//        public TileView(Tiles t) {
-//            super("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
+
+//    private void displayTile(Tiles t) {
+//        System.out.println(("You have met the " + ((t.getCharacter() instanceof Villains)?"Villain " + t.getCharacter().toString():
 //                    (t.getCharacter() instanceof Hero)?"Hero " + t.getCharacter().toString():
-//                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown"));
-//            
-//        }
-//     
-//        @Override
-//        public boolean doAction(char input) {
-//            return true;
-//        }
-//    }
+//                            (t.getCharacter() instanceof Captive)?"Captive " + t.getCharacter().toString():"Unknown")));
+//        
+//    } 
+    class TileView extends View {
+
+        private final Tiles t;
+
+        public TileView(Tiles t) {
+            super("You have met the " + ((t.getCharacter() instanceof Villains) ? "Villain " + t.getCharacter().toString()
+                    + " \n Please select an option:\n"
+                    + "R - Run Away\n"
+                    + "F - Fight the Villain\n"
+                    : ((t.getCharacter() instanceof Hero) ? "Hero " + t.getCharacter().toString()
+                            + " who is now on your Avenger Team"
+                            : (t.getCharacter() instanceof Captive) ? "Captive " + t.getCharacter().toString()
+                                    + " who you've rescued and added strength to your Avenger Team" : "Unknown") 
+                            + "\n press any key to continue."));
+            this.t = t;
+
+        }
+
+        @Override
+        public boolean doAction(char input) {
+            if (t.getCharacter() instanceof Villains) {
+                if (input == 'F') {
+                    if (BattleController.attack(SuperHeroGame.currentGame.getPlayer(), (Villains)t.getCharacter())) {
+                        System.out.println("You've defeated the Villain!");
+                    }else {
+                        System.out.println("You have been defeated");
+                    }
+                }
+            }
+            return false;
+        }
+    }
 }

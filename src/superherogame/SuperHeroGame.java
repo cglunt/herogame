@@ -10,10 +10,13 @@ import byui.cit260.herogame.model.CharacterModel;
 import byui.cit260.herogame.model.Game;
 import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Item;
+import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Villains;
 import byui.cit260.view.menu.MainMenuView;
 import byui.cit260.view.menu.WelcomeView;
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -49,28 +52,54 @@ public class SuperHeroGame {
         SuperHeroGame.inFile = inFile;
     }
 
-    /**
-     *
-     * @param args
-     */
+    private static final Player player = null;
+
     public static void main(String[] args) {
         currentGame = new Game();
         WelcomeView welcomeView = new WelcomeView();
         welcomeView.displayBanner();
-
-        MainMenuView mainView = new MainMenuView();
         try {
+            SuperHeroGame.inFile = new BufferedReader(new InputStreamReader(System.in));
+
+            SuperHeroGame.outFile = new PrintWriter(System.out, true);
+
+            String filePath = "log.txt";
+            SuperHeroGame.logFile = new PrintWriter(filePath);
+
+            MainMenuView mainView = new MainMenuView();
             mainView.display();
-        } catch (Throwable te) {
-            te.printStackTrace();
-            System.out.println(te.getMessage());
-            welcomeView.displayBanner();
 
+        } catch (Throwable e) {
+
+            System.out.println("Exception: " + e.toString()
+                    + "\nCause: " + e.getCause()
+                    + "\nMessage: " + e.getMessage());
+
+            e.printStackTrace();
+
+        } finally {
+            try {
+                if (SuperHeroGame.inFile != null) {
+                    SuperHeroGame.inFile.close();
+                }
+
+                if (SuperHeroGame.outFile != null) {
+                    SuperHeroGame.outFile.close();
+                }
+
+                if (SuperHeroGame.logFile != null) {
+                    SuperHeroGame.logFile.close();
+                }
+
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
         }
-//        char in = mainView.getInput();
-
-//        System.out.println("YOU ENTERED " + in);
     }
+
+
+ 
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -168,13 +197,11 @@ public class SuperHeroGame {
         characters.add(jessicajones);
 
         /*        for (int i = 0; i < 25; ++i) {
-        Hero empty = new Hero();
-        empty.setDescription("Nobody is here - Try Again");
-        empty.setName("Empty");
-        characters.add(empty);
-        }*/
-        
-
+         Hero empty = new Hero();
+         empty.setDescription("Nobody is here - Try Again");
+         empty.setName("Empty");
+         characters.add(empty);
+         }*/
         Villains magneto = new Villains(9);
         magneto.setDescription("Evil Genius.");
         magneto.setName("Magneto");
@@ -278,7 +305,7 @@ public class SuperHeroGame {
         // same for items as well
         //for (int i = 0; i < 25; ++i) {
         //    Captive empty = new Captive();
-         //   empty.setDescription("Nobody is here - Lucky Day");
+        //   empty.setDescription("Nobody is here - Lucky Day");
         //    empty.setName("Empty");
         //    characters.add(empty);
         //}
