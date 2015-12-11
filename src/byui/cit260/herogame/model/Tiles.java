@@ -20,7 +20,7 @@ public class Tiles implements Serializable {
     private Player player;
 
     public Tiles() {
-   //     this.item = item;
+        //     this.item = item;
         //     this.character = character;
         //     this.player = player;
     }

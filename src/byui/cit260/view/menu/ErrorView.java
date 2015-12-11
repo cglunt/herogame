@@ -13,18 +13,18 @@ import superherogame.SuperHeroGame;
  * @author Cindy
  */
 public class ErrorView {
-    
- private static final PrintWriter errorFile = SuperHeroGame.getOutFile();
+
+    private static final PrintWriter errorFile = SuperHeroGame.getOutFile();
     private static final PrintWriter logFile = SuperHeroGame.getLogFile();
-    
+
     public static void display(String className, String errorMessage) {
-        
+
         errorFile.println(
-                  "---------------------------------------------"
+                "---------------------------------------------"
                 + "\n- ERROR - " + errorMessage
                 + "\n-------------------------------------------");
-        
+
         //log error
         logFile.println(className + " - " + errorMessage);
-    }   
+    }
 }

@@ -13,8 +13,6 @@ import byui.cit260.herogame.model.Hero;
 import byui.cit260.herogame.model.Player;
 import byui.cit260.herogame.model.Tiles;
 import byui.cit260.herogame.model.Villains;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import superherogame.SuperHeroGame;
 
 /**
@@ -130,8 +128,8 @@ public class MoveHelpView extends View {
                     : ((t.getCharacter() instanceof Hero) ? "Hero " + t.getCharacter().toString()
                             + " who is now on your Avenger Team"
                             : (t.getCharacter() instanceof Captive) ? "Captive " + t.getCharacter().toString()
-                                    + " who you've rescued and added strength to your Avenger Team" : "Unknown") 
-                            + "\n press any key to continue."));
+                                    + " who you've rescued and added strength to your Avenger Team" : "Unknown")
+                    + "\n press any key to continue."));
             this.t = t;
 
         }
@@ -140,10 +138,10 @@ public class MoveHelpView extends View {
         public boolean doAction(char input) {
             if (t.getCharacter() instanceof Villains) {
                 if (input == 'F') {
-                    if (BattleController.attack(SuperHeroGame.currentGame.getPlayer(), (Villains)t.getCharacter())) {
-                        System.out.println("You've defeated the Villain!");
-                    }else {
-                        System.out.println("You have been defeated");
+                    if (BattleController.attack(SuperHeroGame.currentGame.getPlayer(), (Villains) t.getCharacter())) {
+                        System.out.println("CONGRATULATIONS! You've defeated the Villain!");
+                    } else {
+                        System.out.println("OH NO! You have been defeated");
                     }
                 }
             }

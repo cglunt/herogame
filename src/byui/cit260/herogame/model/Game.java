@@ -8,16 +8,17 @@ package byui.cit260.herogame.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  *
  * @author Cindy
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     Player p1;
     Map m1;
+
     public Game() {
-        
+
     }
 
     public Player getPlayer() {
@@ -28,7 +29,6 @@ public class Game implements Serializable{
         this.p1 = p1;
     }
 
-
     public Map getMap() {
         return m1;
     }
@@ -37,7 +37,6 @@ public class Game implements Serializable{
         this.m1 = m1;
     }
 
-    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -74,6 +73,4 @@ public class Game implements Serializable{
         this.m1 = m1;
     }
 
-
-    
 }

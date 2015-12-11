@@ -14,22 +14,19 @@ import java.util.ArrayList;
  */
 public class Player extends CharacterModel {
 
-  //  public static double MAX_DAMAGE;
-
+    //  public static double MAX_DAMAGE;
     //Player has a collection of Heroes
     private String name;
     private ArrayList<Hero> team;
     private Point coordinates;
 
     public Player() {
-        coordinates=new Point();
+        coordinates = new Point();
     }
-    
+
     public Point getCoordinates() {
         return coordinates;
     }
-    
-    
 
     public void setCoordinates(Point coordinates) {
         this.coordinates = coordinates;
@@ -39,6 +36,7 @@ public class Player extends CharacterModel {
     public void setItem(String what_is_your_name) {
 
     }
+
     public double getStrength() {
         double strength = 0;
         for (Hero team1 : team) {
@@ -50,12 +48,9 @@ public class Player extends CharacterModel {
         return strength;
     }
 
-
-
     public void applyDamage(int villainsDamage) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 
     public ArrayList<Hero> getTeam() {
         return team;
@@ -76,7 +71,5 @@ public class Player extends CharacterModel {
     public ArrayList<Item> getItem() {
         return item;
     }
-
-
 
 }

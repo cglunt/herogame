@@ -56,7 +56,7 @@ public class MovementController {
             for (int j = 0; j < tiles[i].length && position < characters.size(); j++) {
                 Tiles t1 = new Tiles();
                 t1.setCharacter(characters.get(position));
-                if(position < items.size()) {
+                if (position < items.size()) {
                     t1.setItem(items.get(position));
                 }
                 tiles[i][j] = t1;
@@ -90,7 +90,6 @@ public class MovementController {
         return 0;
 
     }
-    
 
     public static Player moveForward(Player p) throws MapControllerException {
         Map map = getCurrentGame().getMap();
@@ -152,15 +151,14 @@ public class MovementController {
 
         row.x++;
         p.setCoordinates(row);
-        
+
         return p;
 
     }
-    
+
     public static Tiles getTile(Point p) {
         Tiles[][] m = superherogame.SuperHeroGame.getCurrentGame().getMap().getMap();
         return m[p.x][p.y];
     }
-    
 
 }

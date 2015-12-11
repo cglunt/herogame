@@ -28,12 +28,12 @@ public class GameController {
         currentGame.setMap(MovementController.createMap(mapSize));
         setCurrentGame(currentGame);
         try {
-            MovementController.movePlayer(currentGame.getPlayer(), new Point(1,1));
+            MovementController.movePlayer(currentGame.getPlayer(), new Point(1, 1));
         } catch (MapControllerException ex) {
             Logger.getLogger(GameController.class.getName()).log(Level.SEVERE, null, ex);
             System.err.println("Error");
         }
-        
+
         SuperHeroGame.currentGame = currentGame; //Initializing singleton instance
         return currentGame;
     }

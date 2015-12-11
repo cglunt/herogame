@@ -98,9 +98,6 @@ public class SuperHeroGame {
         }
     }
 
-
- 
-
     public static Game getCurrentGame() {
         return currentGame;
     }

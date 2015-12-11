@@ -88,6 +88,4 @@ public class CharacterViewMenu extends View {
         System.out.println("Items & Strength Value\n");
     }
 
-
-
 }

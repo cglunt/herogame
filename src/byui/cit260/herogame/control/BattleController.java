@@ -18,42 +18,41 @@ public class BattleController {
 
     /**
      * This method applies the player's damage to the villain without an item.
-     * 
+     *
      * @param p The player
      * @param v The villains
      * @return true if the villain is defeated, false otherwise
      */
     public static boolean attackVillains(Player p, Villains v) {
-        
-        int playerDamage = (int)(v.getStrength() * Math.random()) + 1;
-        
+
+        int playerDamage = (int) (v.getStrength() * Math.random()) + 1;
+
         v.setHitPoints(v.getHitPoints() - playerDamage);
-        
-        if(v.getHitPoints() > 0) {
+
+        if (v.getHitPoints() > 0) {
             return true;
         } else {
             return false;
         }
-        
+
     }
-    
+
     public static boolean attackPlayer(Player p, Villains v) {
-        
-        int villainsDamage = (int)(p.getStrength() * Math.random()) + 1;
-        
+
+        int villainsDamage = (int) (p.getStrength() * Math.random()) + 1;
+
         p.applyDamage(villainsDamage);
-        
-        if(p.getHitPoints() > 0) {
+
+        if (p.getHitPoints() > 0) {
             return true;
         } else {
             return false;
         }
     }
-    
+
     public static boolean attack(Player p, Villains v) {
-        while(attackVillains(p,v) && attackPlayer(p,v));
-        return(p.getHitPoints() > 0)?true:false;
-        
-        
+        while (attackVillains(p, v) && attackPlayer(p, v));
+        return (p.getHitPoints() > 0) ? true : false;
+
     }
 }
