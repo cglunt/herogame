@@ -25,11 +25,15 @@ public class BattleController {
      */
     public static boolean attackVillains(Player p, Villains v) {
 
-        int playerDamage = (int) (v.getStrength() * Math.random()) + 1;
+        int playerDamage = (int) (p.getStrength() * Math.random()) + 1;
 
         v.setHitPoints(v.getHitPoints() - playerDamage);
+        
+        System.out.println("Player has total strength: " + p.getStrength());
+        System.out.println("Player did " + playerDamage + " to villain");
+        System.out.println("Villain has " + v.getHitPoints() + " hp left");
 
-        if (v.getHitPoints() > 0) {
+        if (v.getHitPoints() <= 0) {
             return true;
         } else {
             return false;
@@ -39,11 +43,19 @@ public class BattleController {
 
     public static boolean attackPlayer(Player p, Villains v) {
 
-        int villainsDamage = (int) (p.getStrength() * Math.random()) + 1;
+        int villainsDamage = (int) (v.getStrength() * Math.random()) + 1;
 
         p.applyDamage(villainsDamage);
+        
+        System.out.println("Villain has total strength: " + v.getStrength());
+        System.out.println("Villain did " + villainsDamage + " to player");
+        
+        for(Hero h : p.getTeam()) {
+            System.out.println(h.getName() + " has " + h.getHitPoints() + " hp left");
+        }
+        
 
-        if (p.getHitPoints() > 0) {
+        if (p.isDefeated()) {
             return true;
         } else {
             return false;
@@ -51,8 +63,18 @@ public class BattleController {
     }
 
     public static boolean attack(Player p, Villains v) {
-        while (attackVillains(p, v) && attackPlayer(p, v));
-        return (p.getHitPoints() > 0) ? true : false;
-
+        
+        boolean finished = false;
+        
+        while(true) {
+            finished = attackVillains(p, v);
+            if(finished) {
+                return true;
+            }
+            finished = attackPlayer(p, v);
+            if(finished) {
+                return false;
+            }
+        }
     }
 }

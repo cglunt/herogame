@@ -56,7 +56,7 @@ public class Captive extends CharacterModel {
 
     @Override
     public String toString() {
-        return "Captive{" + "Message=" + Message + '}';
+        return this.getName() + " " + this.getDescription();
     }
 
 }

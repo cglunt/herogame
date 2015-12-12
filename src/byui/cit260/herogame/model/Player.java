@@ -19,9 +19,14 @@ public class Player extends CharacterModel {
     private String name;
     private ArrayList<Hero> team;
     private Point coordinates;
+    private ArrayList<Item> item;
+    private ArrayList<Captive> captives;
 
     public Player() {
         coordinates = new Point();
+        team = new ArrayList<>();
+        item = new ArrayList<>();
+        captives = new ArrayList<>();
     }
 
     public Point getCoordinates() {
@@ -31,7 +36,15 @@ public class Player extends CharacterModel {
     public void setCoordinates(Point coordinates) {
         this.coordinates = coordinates;
     }
-    private ArrayList<Item> item;
+
+    public ArrayList<Captive> getCaptives() {
+        return captives;
+    }
+
+    public void setCaptives(ArrayList<Captive> captives) {
+        this.captives = captives;
+    }
+    
 
     public void setItem(String what_is_your_name) {
 
@@ -49,7 +62,30 @@ public class Player extends CharacterModel {
     }
 
     public void applyDamage(int villainsDamage) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Hero> deadHeroes = new ArrayList<>();
+        
+        while(villainsDamage >= 0) {
+            for(Hero h : team) {
+                h.setHitPoints(h.getHitPoints() - 1);
+                if(h.getHitPoints() <= 0) {
+                    System.out.println(h.getName() + " was defeated.");
+                    deadHeroes.add(h);
+                }
+                villainsDamage--;
+                if(villainsDamage  == 0) {
+                    break;
+                }
+            }
+        }
+        
+        team.removeAll(deadHeroes);
+    }
+    
+    public boolean isDefeated() {
+        if(team.size() == 0) {
+            return true;
+        }
+        return false;
     }
 
     public ArrayList<Hero> getTeam() {

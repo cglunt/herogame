@@ -23,6 +23,7 @@ public class Villains extends CharacterModel {
 
     public void setStrength(double Strength) {
         this.Strength = Strength;
+        this.setHitPoints(Strength);
     }
 
     @Override
@@ -54,6 +55,7 @@ public class Villains extends CharacterModel {
 
     public Villains(double Strength) {
         this.Strength = Strength;
+        this.setHitPoints(Strength);
     }
 
 }

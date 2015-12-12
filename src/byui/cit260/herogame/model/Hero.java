@@ -52,6 +52,7 @@ public class Hero extends CharacterModel {
 
     public Hero(double Strength) {
         this.Strength = Strength;
+        this.setHitPoints(Strength);
     }
 
     public Hero() {
