@@ -50,7 +50,7 @@ public class Villains extends CharacterModel {
 
     @Override
     public String toString() {
-        return "Villains{" + "Strength=" + Strength + '}';
+        return this.getName() + " " + this.getDescription();
     }
 
     public Villains(double Strength) {
