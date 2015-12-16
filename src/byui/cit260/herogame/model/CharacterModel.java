@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Steph Ogden
+ * @author Steph Ogden & Cynthia Glunt
  */
 public class CharacterModel implements Serializable {
 

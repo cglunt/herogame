@@ -179,12 +179,12 @@ public class SuperHeroGame {
         characters.add(storm);
 
         Hero supergirl = new Hero(9);
-        supergirl.setDescription("Princess of Power.");
+        supergirl.setDescription("The Supergirl from Krypton.");
         supergirl.setName("Super Girl");
         characters.add(supergirl);
 
         Hero shera = new Hero(10);
-        shera.setDescription("The Supergirl from Krypton.");
+        shera.setDescription("Princess of Power.");
         shera.setName("Shera");
         characters.add(shera);
 

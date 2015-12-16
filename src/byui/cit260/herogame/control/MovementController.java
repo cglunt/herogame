@@ -144,8 +144,8 @@ public class MovementController {
         Point row = p.getCoordinates();
 
         if (row.x + 1 == map.getWidth()) {
-            throw new MapControllerException("Can not move Player to this Tile"
-                    + "because that space is outside"
+            throw new MapControllerException("Can not move Player to this Tile "
+                    + "because that space is outside "
                     + "the maps bounds.");
         }
 
