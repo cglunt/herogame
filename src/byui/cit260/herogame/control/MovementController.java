@@ -66,7 +66,7 @@ public class MovementController {
         return map;
     }
 
-    //include exception here when player tries to move out of bounds
+   
     /**
      *
      * @param p
@@ -81,7 +81,7 @@ public class MovementController {
         int newColumn = coordinates.y - 1;
 
         if (newRow < 0 || newRow > map.getWidth() || newColumn > map.getHeight()) {
-            throw new MapControllerException("Can not move Player to this Tile"
+            throw new MapControllerException("Can not move Player to this Tile "
                     + "because that space is outside "
                     + "the maps bounds.");
 
@@ -96,8 +96,8 @@ public class MovementController {
         Point row = p.getCoordinates();
 
         if (row.y + 1 == map.getHeight()) {
-            throw new MapControllerException("Can not move Player to this Tile"
-                    + "because that space is outside"
+            throw new MapControllerException("Can not move Player to this Tile "
+                    + "because that space is outside "
                     + "the maps bounds.");
         }
 
@@ -128,8 +128,8 @@ public class MovementController {
         Point row = p.getCoordinates();
 
         if (row.x == 0) {
-            throw new MapControllerException("Can not move Player to this Tile"
-                    + "because that space is outside"
+            throw new MapControllerException("Can not move Player to this Tile "
+                    + "because that space is outside "
                     + "the maps bounds.");
         }
 
