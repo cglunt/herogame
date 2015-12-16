@@ -66,7 +66,6 @@ public class MovementController {
         return map;
     }
 
-   
     /**
      *
      * @param p

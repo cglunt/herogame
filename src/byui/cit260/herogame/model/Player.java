@@ -44,7 +44,6 @@ public class Player extends CharacterModel {
     public void setCaptives(ArrayList<Captive> captives) {
         this.captives = captives;
     }
-    
 
     public void setItem(String what_is_your_name) {
 
@@ -63,26 +62,26 @@ public class Player extends CharacterModel {
 
     public void applyDamage(int villainsDamage) {
         ArrayList<Hero> deadHeroes = new ArrayList<>();
-        
-        while(villainsDamage >= 0) {
-            for(Hero h : team) {
+
+        while (villainsDamage >= 0) {
+            for (Hero h : team) {
                 h.setHitPoints(h.getHitPoints() - 1);
-                if(h.getHitPoints() <= 0) {
+                if (h.getHitPoints() <= 0) {
                     System.out.println(h.getName() + " was defeated.");
                     deadHeroes.add(h);
                 }
                 villainsDamage--;
-                if(villainsDamage  == 0) {
+                if (villainsDamage == 0) {
                     break;
                 }
             }
         }
-        
+
         team.removeAll(deadHeroes);
     }
-    
+
     public boolean isDefeated() {
-        if(team.size() == 0) {
+        if (team.size() == 0) {
             return true;
         }
         return false;

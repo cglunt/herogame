@@ -75,12 +75,12 @@ public class MoveHelpView extends View {
 
     private void viewTeam() {
         Player p = SuperHeroGame.currentGame.getPlayer();
-        
-        for(Hero h : p.getTeam()) {
+
+        for (Hero h : p.getTeam()) {
             System.out.println("Name: " + h.getName() + "\t\tHP: " + h.getHitPoints());
         }
     }
-    
+
     private void moveNorth() {
 
         Player p = SuperHeroGame.currentGame.getPlayer();
@@ -152,16 +152,16 @@ public class MoveHelpView extends View {
                             : (t.getCharacter() instanceof Captive) ? "Captive " + t.getCharacter().toString()
                                     + " who you've rescued and added strength to your Avenger Team" : "There is nothing here")
                     + "\n press any key to continue."));
-            
-            if(t.getCharacter() instanceof Hero) {
-                SuperHeroGame.currentGame.getPlayer().getTeam().add((Hero)t.getCharacter());
+
+            if (t.getCharacter() instanceof Hero) {
+                SuperHeroGame.currentGame.getPlayer().getTeam().add((Hero) t.getCharacter());
                 t.setCharacter(null);
             }
-            if(t.getCharacter() instanceof Captive) {
-                SuperHeroGame.currentGame.getPlayer().getCaptives().add((Captive)t.getCharacter());
+            if (t.getCharacter() instanceof Captive) {
+                SuperHeroGame.currentGame.getPlayer().getCaptives().add((Captive) t.getCharacter());
                 t.setCharacter(null);
             }
-            
+
             this.t = t;
 
         }

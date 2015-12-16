@@ -58,35 +58,34 @@ public class Map implements Serializable {
     public void setMap(Tiles[][] map) {
         this.map = map;
     }
-    
-    
+
     public String viewMap() {
         String rtn = "";
-        
-        for(int i = 0; i < map.length; i++) {
-            for(int j = map[0].length - 1; j >= 0; j--) {
+
+        for (int i = 0; i < map.length; i++) {
+            for (int j = map[0].length - 1; j >= 0; j--) {
                 Tiles t = map[i][j];
-                if(t.getItem() != null && t.getCharacter() != null) {
+                if (t.getItem() != null && t.getCharacter() != null) {
                     rtn += "i";
                 }
-                if(t.getItem() != null && t.getCharacter() == null) {
+                if (t.getItem() != null && t.getCharacter() == null) {
                     rtn += "i  ";
                 }
-                if(t.getCharacter() != null) {
-                    if(t.getCharacter() instanceof Hero) {
+                if (t.getCharacter() != null) {
+                    if (t.getCharacter() instanceof Hero) {
                         rtn += "h  ";
                     }
-                    if(t.getCharacter() instanceof Villains) {
+                    if (t.getCharacter() instanceof Villains) {
                         rtn += "v  ";
                     }
-                    if(t.getCharacter() instanceof Captive) {
+                    if (t.getCharacter() instanceof Captive) {
                         rtn += "c  ";
                     }
                 }
             }
             rtn += "\n";
         }
-        
+
         return rtn;
     }
 

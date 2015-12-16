@@ -25,10 +25,10 @@ public class BattleController {
      */
     public static boolean attackVillains(Player p, Villains v) {
 
-        int playerDamage = (int) (p.getStrength() * Math.random()) + 1;
+        int playerDamage = (int) (p.getStrength() * Math.random() * .5) + 1;
 
         v.setHitPoints(v.getHitPoints() - playerDamage);
-        
+
         System.out.println("Player has total strength: " + p.getStrength());
         System.out.println("Player did " + playerDamage + " to villain");
         System.out.println("Villain has " + v.getHitPoints() + " hp left");
@@ -43,17 +43,16 @@ public class BattleController {
 
     public static boolean attackPlayer(Player p, Villains v) {
 
-        int villainsDamage = (int) (v.getStrength() * Math.random()) + 1;
+        int villainsDamage = (int) (v.getStrength() * Math.random() * .5) + 1;
 
         p.applyDamage(villainsDamage);
-        
+
         System.out.println("Villain has total strength: " + v.getStrength());
         System.out.println("Villain did " + villainsDamage + " to player");
-        
-        for(Hero h : p.getTeam()) {
+
+        for (Hero h : p.getTeam()) {
             System.out.println(h.getName() + " has " + h.getHitPoints() + " hp left");
         }
-        
 
         if (p.isDefeated()) {
             return true;
@@ -63,16 +62,16 @@ public class BattleController {
     }
 
     public static boolean attack(Player p, Villains v) {
-        
+
         boolean finished = false;
-        
-        while(true) {
+
+        while (true) {
             finished = attackVillains(p, v);
-            if(finished) {
+            if (finished) {
                 return true;
             }
             finished = attackPlayer(p, v);
-            if(finished) {
+            if (finished) {
                 return false;
             }
         }
