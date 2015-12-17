@@ -62,9 +62,9 @@ public class Map implements Serializable {
     public String viewMap() {
         String rtn = "";
 
-        for (int i = 0; i < map.length; i++) {
+        for (Tiles[] map1 : map) {
             for (int j = map[0].length - 1; j >= 0; j--) {
-                Tiles t = map[i][j];
+                Tiles t = map1[j];
                 if (t.getItem() != null && t.getCharacter() != null) {
                     rtn += "i";
                 }

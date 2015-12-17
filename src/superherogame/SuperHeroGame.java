@@ -21,11 +21,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class SuperHeroGame {
-
+// variable declaration
     public static Game currentGame;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-
     private static PrintWriter logFile = null;
 
     public static PrintWriter getLogFile() {
